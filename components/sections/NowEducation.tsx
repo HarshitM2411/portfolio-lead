@@ -1,6 +1,8 @@
 import type { NowItem } from "@/lib/types";
 import type { Education } from "@/lib/types";
-import { Section } from "@/components/layout/Section";
+import { formatRange } from "@/lib/format";
+import { GraduationCap } from "lucide-react";
+import { Container } from "@/components/layout/Container";
 
 type NowEducationProps = {
   now: NowItem[];
@@ -9,7 +11,6 @@ type NowEducationProps = {
   showEducation: boolean;
 };
 
-/** Combined exploring + education row matching design mocks. */
 export function NowEducationSection({
   now,
   education,
@@ -19,47 +20,73 @@ export function NowEducationSection({
   if (!showNow && !showEducation) return null;
 
   return (
-    <Section id="now" index="08 // Growth" title="Exploring & education">
-      <div className="grid gap-4 md:grid-cols-2">
-        {showNow ? (
-          <div className="rounded-xl border border-border bg-card p-5 shadow-soft">
-            <h3 className="font-mono text-xs tracking-wide text-muted-foreground uppercase">
-              What I&apos;m exploring
-            </h3>
-            <ul className="mt-3 space-y-2">
+    <section id="now" className="scroll-mt-20 py-6 md:scroll-mt-32 md:py-10">
+      <Container>
+        <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2 md:gap-6">
+          {showNow ? (
+            <article className="relative space-y-1.5 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-sky-50/60 via-white to-white p-4 shadow-bento md:space-y-4 md:rounded-3xl md:p-8">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-2 md:pb-3">
+                <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold tracking-wider text-sky-800 uppercase md:text-xs md:text-sky-700">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-500" />
+                  </span>
+                  // ACTIVE_RADAR: NOW
+                </span>
+                <span className="font-mono text-[10px] text-slate-400">LAB_BRANCH</span>
+              </div>
+              <h3 className="hidden font-heading text-xl font-bold tracking-tight text-[#090D16] sm:block sm:text-2xl">
+                What I&apos;m Exploring &amp; Prototyping
+              </h3>
               {now.map((item) => (
-                <li
+                <p
                   key={item.text.slice(0, 32)}
-                  className="text-sm leading-relaxed text-[var(--text-secondary)]"
+                  className="text-xs leading-relaxed text-slate-600 md:text-sm"
                 >
                   {item.text}
-                </li>
+                </p>
               ))}
-            </ul>
-          </div>
-        ) : null}
+              <p className="hidden items-center gap-2 pt-2 font-mono text-xs text-slate-500 md:flex">
+                <span className="h-1.5 w-1.5 rounded-full bg-sky-600" />
+                STATUS: EXPERIMENTAL RUNTIME // LAB_BRANCH
+              </p>
+            </article>
+          ) : null}
 
-        {showEducation ? (
-          <div
-            id="education"
-            className="scroll-mt-24 rounded-xl border border-border bg-card p-5 shadow-soft"
-          >
-            <h3 className="font-mono text-xs tracking-wide text-muted-foreground uppercase">
-              Education
-            </h3>
-            <p className="mt-3 text-base font-semibold text-foreground">
-              {education.school}
-            </p>
-            <p className="mt-1 text-sm text-[var(--text-secondary)]">
-              {education.degree} in {education.field} · {education.location}
-            </p>
-            <p className="mt-2 font-mono text-xs text-muted-foreground">
-              Aug 2016 – June 2020
-              {education.detail ? ` · ${education.detail}` : ""}
-            </p>
-          </div>
-        ) : null}
-      </div>
-    </Section>
+          {showEducation ? (
+            <article
+              id="education"
+              className="scroll-mt-24 space-y-1 overflow-hidden rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-bento backdrop-blur-md md:space-y-4 md:rounded-3xl md:p-8"
+            >
+              <div className="flex items-center justify-between border-b border-slate-100 pb-2 md:pb-3">
+                <span className="font-mono text-[10px] font-bold tracking-wider text-slate-500 uppercase md:text-xs">
+                  // ACADEMIC_REGISTRY
+                </span>
+                <GraduationCap className="hidden size-5 text-slate-400 md:block" aria-hidden />
+                <span className="font-mono text-[10px] font-semibold text-[#2563EB] md:hidden">
+                  {formatRange(education.start, education.end)}
+                </span>
+              </div>
+              <div className="mt-1 space-y-1">
+                <p className="text-sm font-bold tracking-tight text-[#090D16] md:text-2xl">
+                  {education.school}
+                </p>
+                <p className="font-mono text-xs font-semibold text-[#2563EB] md:text-sm">
+                  {education.degree} in {education.field}
+                </p>
+              </div>
+              <p className="text-xs leading-relaxed text-slate-600 md:text-sm">
+                {education.location}
+                {education.detail ? ` · ${education.detail}` : ""}
+              </p>
+              <p className="hidden items-center gap-2 pt-2 font-mono text-xs text-slate-500 md:flex">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                SESSION: {formatRange(education.start, education.end)}
+              </p>
+            </article>
+          ) : null}
+        </div>
+      </Container>
+    </section>
   );
 }

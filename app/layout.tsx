@@ -1,11 +1,17 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Geist, JetBrains_Mono } from "next/font/google";
+import { Geist, Inter, JetBrains_Mono } from "next/font/google";
+import { AmbientBackground } from "@/components/layout/AmbientBackground";
 import { site } from "@/data/site";
 import "./globals.css";
 
 const grotesk = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -51,12 +57,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${grotesk.variable} ${mono.variable} h-full antialiased`}
+      className={`${grotesk.variable} ${inter.variable} ${mono.variable} h-full scroll-smooth antialiased`}
     >
       <body
-        className="min-h-full flex flex-col font-sans"
+        className="relative flex min-h-full flex-col overflow-x-hidden bg-[#FAFAFD] font-sans text-[#090D16]"
         suppressHydrationWarning
       >
+        <AmbientBackground />
         {children}
         <Analytics />
       </body>

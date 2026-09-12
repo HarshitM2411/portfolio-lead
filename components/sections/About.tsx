@@ -2,37 +2,73 @@ import { Section } from "@/components/layout/Section";
 
 type AboutSectionProps = {
   paragraphs: string[];
+  embedded?: boolean;
 };
 
-export function AboutSection({ paragraphs }: AboutSectionProps) {
-  return (
-    <Section id="about" index="03 // About" title="From distributed systems to agentic AI">
-      <div className="grid gap-8 lg:grid-cols-12">
-        <div className="max-w-3xl space-y-4 text-base leading-relaxed text-[var(--text-secondary)] lg:col-span-8">
-          {paragraphs.map((p) => (
-            <p key={p.slice(0, 24)}>{p}</p>
-          ))}
+export function AboutSection({ paragraphs, embedded = false }: AboutSectionProps) {
+  const card = (
+    <div className="flex h-full flex-col justify-between space-y-6 rounded-3xl border border-slate-200/80 bg-white/90 p-5 shadow-bento backdrop-blur-xl sm:p-9">
+        <div className="space-y-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[#2563EB]" />
+              <span className="font-mono text-xs font-semibold tracking-wider text-[#2563EB] uppercase">
+                [01_PERSPECTIVE]
+              </span>
+            </div>
+            <h2
+              id="about-heading"
+              className="font-heading text-2xl font-bold tracking-tight text-[#090D16] sm:text-3xl"
+            >
+              Distributed Backbone to Autonomous Agent Execution
+            </h2>
+          </div>
+          <div className="space-y-4 text-sm leading-relaxed text-slate-600 md:text-base">
+            {paragraphs.map((p, i) => (
+              <p key={p.slice(0, 24)}>
+                {i === 0 ? emphasizePhrase(p, "agentic") : p}
+              </p>
+            ))}
+          </div>
         </div>
-        <aside className="h-fit rounded-xl border border-border bg-card p-5 shadow-soft lg:col-span-4">
-          <p className="font-mono text-[11px] tracking-wide text-muted-foreground uppercase">
-            Pivot
-          </p>
-          <ol className="mt-3 space-y-3 font-mono text-xs text-[var(--text-secondary)]">
-            <li>
-              <span className="text-primary">01</span> Distributed MERN / Node on
-              AWS
-            </li>
-            <li>
-              <span className="text-primary">02</span> Workflow &amp; platform
-              scale to 100K+
-            </li>
-            <li>
-              <span className="text-primary">03</span> Production GenAI — agents,
-              RAG, evals
-            </li>
-          </ol>
-        </aside>
+        <div className="flex flex-wrap items-center gap-2.5 border-t border-slate-100 pt-4 font-mono text-xs">
+          <span className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1 text-slate-700">
+            <span className="h-2 w-2 rounded-full bg-sky-500" />
+            PATTERNS: EVENT-DRIVEN
+          </span>
+          <span className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1 text-slate-700">
+            <span className="h-2 w-2 rounded-full bg-indigo-600" />
+            PARADIGM: AGENTIC MULTI-NODE
+          </span>
+          <span className="flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-1 font-semibold text-emerald-800">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            SCOPE: 100K+ USERS
+          </span>
+        </div>
       </div>
+  );
+
+  if (embedded) return card;
+
+  return (
+    <Section id="about" hideHeader className="py-6 md:py-10">
+      {card}
     </Section>
+  );
+}
+
+function emphasizePhrase(text: string, needle: string) {
+  const idx = text.toLowerCase().indexOf(needle);
+  if (idx === -1) return text;
+  const end = text.indexOf(" ", idx);
+  const stop = end === -1 ? idx + needle.length : Math.min(end + 12, text.length);
+  return (
+    <>
+      {text.slice(0, idx)}
+      <span className="rounded border border-sky-100 bg-sky-50 px-1.5 py-0.5 font-bold text-[#090D16]">
+        {text.slice(idx, stop)}
+      </span>
+      {text.slice(stop)}
+    </>
   );
 }

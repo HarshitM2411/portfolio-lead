@@ -34,7 +34,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="py-12 md:py-16">
+      <main className="relative z-10 pt-24 pb-28 md:pt-32 md:pb-16">
         <Container className="max-w-2xl">
           <Link
             href="/blog"

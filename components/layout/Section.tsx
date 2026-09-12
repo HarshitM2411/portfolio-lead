@@ -1,11 +1,13 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/layout/Container";
+import { SectionHeader } from "@/components/layout/SectionHeader";
 
 type SectionProps = {
   id: string;
   title?: string;
   index?: string;
+  meta?: string;
   children: ReactNode;
   className?: string;
   /** Hide the section chrome title row (e.g. hero). */
@@ -16,6 +18,7 @@ export function Section({
   id,
   title,
   index,
+  meta,
   children,
   className,
   hideHeader = false,
@@ -24,25 +27,11 @@ export function Section({
     <section
       id={id}
       aria-labelledby={title ? `${id}-heading` : undefined}
-      className={cn("scroll-mt-24 py-12 md:py-16 lg:py-20", className)}
+      className={cn("scroll-mt-20 py-6 md:scroll-mt-32 md:py-10 lg:py-14", className)}
     >
       <Container>
         {!hideHeader && (title || index) ? (
-          <header className="mb-8 space-y-2">
-            {index ? (
-              <p className="font-mono text-xs tracking-wide text-muted-foreground uppercase">
-                {index}
-              </p>
-            ) : null}
-            {title ? (
-              <h2
-                id={`${id}-heading`}
-                className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl"
-              >
-                {title}
-              </h2>
-            ) : null}
-          </header>
+          <SectionHeader id={id} index={index} title={title} meta={meta} />
         ) : null}
         {children}
       </Container>

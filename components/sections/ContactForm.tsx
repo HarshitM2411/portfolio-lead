@@ -1,21 +1,16 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 type ContactFormProps = {
   email: string;
 };
 
-/**
- * Opens the visitor's email client with a prefilled message to `email`.
- * No third-party form backend — frontend-only mailto flow.
- */
 export function ContactForm({ email }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "opened">("idle");
 
@@ -24,8 +19,6 @@ export function ContactForm({ email }: ContactFormProps) {
     const fd = new FormData(e.currentTarget);
     const name = String(fd.get("name") ?? "").trim();
     const fromEmail = String(fd.get("email") ?? "").trim();
-    const subject =
-      String(fd.get("subject") ?? "").trim() || "Portfolio inquiry";
     const message = String(fd.get("message") ?? "").trim();
 
     const body = [
@@ -38,78 +31,69 @@ export function ContactForm({ email }: ContactFormProps) {
       .filter(Boolean)
       .join("\n");
 
-    const mailto = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent("Portfolio inquiry")}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     setStatus("opened");
   }
 
   return (
     <div className="space-y-4">
-      <p className="text-sm text-[var(--text-secondary)]">
-        Fill this in and your email app will open a message to{" "}
-        <span className="font-medium text-foreground">{email}</span>.
-      </p>
-
-      <form onSubmit={onSubmit} className="space-y-4">
-        <div className="space-y-2">
-          <Label htmlFor="name">01 — Your name</Label>
+      <form onSubmit={onSubmit} className="space-y-3 md:space-y-5">
+        <div className="space-y-1 md:space-y-2">
+          <Label htmlFor="name">01 // CALLER_NAME</Label>
           <Input
             id="name"
             name="name"
             required
-            placeholder="Jane Doe"
+            placeholder="Engineering Director / Recruiter"
             autoComplete="name"
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="email">02 — Your email</Label>
+        <div className="space-y-1 md:space-y-2">
+          <Label htmlFor="email">02 // SENDER_NETWORK_ADDRESS (EMAIL)</Label>
           <Input
             id="email"
             name="email"
             type="email"
             required
-            placeholder="you@company.com"
+            placeholder="colleague@domain.com"
             autoComplete="email"
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="subject">03 — Subject</Label>
-          <Input
-            id="subject"
-            name="subject"
-            placeholder="Role / collaboration"
-          />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="message">04 — Message</Label>
+        <div className="space-y-1 md:space-y-2">
+          <Label htmlFor="message">03 // INQUIRY_PAYLOAD (MESSAGE)</Label>
           <Textarea
             id="message"
             name="message"
             required
-            rows={5}
-            placeholder="How can I help?"
+            rows={4}
+            placeholder="Detail architectural challenge, role scope, or project parameters..."
           />
         </div>
-        <Button type="submit" className="w-full sm:w-auto">
-          Open email to send
+        <Button
+          type="submit"
+          variant="gradient"
+          className="h-11 w-full rounded-xl py-3.5"
+        >
+          <Send className="size-4" aria-hidden />
+          [ TRANSMIT DISPATCH ]
         </Button>
       </form>
 
       {status === "opened" ? (
-        <p className="text-sm text-emerald-700" role="status">
-          Email draft opened — hit send in your mail app to deliver it.
-        </p>
-      ) : null}
-
-      <p className="text-sm text-muted-foreground">
-        Or email directly:{" "}
-        <a
-          href={`mailto:${email}`}
-          className={cn(buttonVariants({ variant: "link" }), "h-auto px-0")}
+        <div
+          className="space-y-1 rounded-xl border border-emerald-200 bg-emerald-50 p-4 font-mono text-xs"
+          role="status"
         >
-          {email}
-        </a>
-      </p>
+          <p className="font-bold text-emerald-800">
+            STATUS: 200 OK // DISPATCH_RECEIVED
+          </p>
+          <p className="font-sans text-sm text-emerald-950">
+            Email draft opened — hit send in your mail app to deliver it to{" "}
+            {email}.
+          </p>
+        </div>
+      ) : null}
     </div>
   );
 }

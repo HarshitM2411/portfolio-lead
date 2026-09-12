@@ -2,7 +2,7 @@ import { Section } from "@/components/layout/Section";
 import { buttonVariants } from "@/components/ui/button";
 import type { GitHubConfig } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 type GitHubSectionProps = {
   github: GitHubConfig;
@@ -12,26 +12,26 @@ export function GitHubSection({ github }: GitHubSectionProps) {
   const repos = github.pinnedRepoSlugs ?? [];
 
   return (
-    <Section id="github" index="09 // GitHub" title="GitHub presence">
-      <div className="rounded-xl border border-border bg-card p-5 shadow-soft">
+    <Section
+      id="github"
+      index="[06_EXTERNAL_REGISTRY]"
+      title="GitHub presence"
+      meta={`@${github.username}`}
+      className="py-8 md:py-10"
+    >
+      <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-5 shadow-bento backdrop-blur-md md:p-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="font-mono text-xs text-muted-foreground">
-              @{github.username}
-            </p>
-            <p className="mt-1 text-sm text-[var(--text-secondary)]">
-              Public repos and experiments — frontend-only links, no backend
-              proxy.
-            </p>
-          </div>
+          <p className="text-sm text-slate-600">
+            Public repos and experiments — frontend-only links, no backend proxy.
+          </p>
           <a
             href={github.profileUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(buttonVariants({ variant: "outline" }), "gap-2")}
+            className={cn(buttonVariants({ variant: "outline" }), "gap-2 rounded-xl")}
           >
             View profile
-            <ExternalLink className="size-3.5" aria-hidden />
+            <ArrowUpRight className="size-3.5" aria-hidden />
           </a>
         </div>
 
@@ -43,12 +43,10 @@ export function GitHubSection({ github }: GitHubSectionProps) {
                   href={`${github.profileUrl.replace(/\/$/, "")}/${slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block rounded-lg border border-border bg-background p-4 transition-colors hover:border-[var(--border-medium)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="hover-lift block rounded-xl border border-slate-200 bg-slate-50 p-4 transition-colors hover:border-sky-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
-                  <p className="font-mono text-sm font-medium text-foreground">
-                    {slug}
-                  </p>
-                  <p className="mt-1 font-mono text-[11px] text-muted-foreground">
+                  <p className="font-mono text-sm font-medium text-[#090D16]">{slug}</p>
+                  <p className="mt-1 font-mono text-[11px] text-slate-500">
                     github.com/{github.username}/{slug}
                   </p>
                 </a>

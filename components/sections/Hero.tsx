@@ -1,115 +1,238 @@
+import type { Education } from "@/lib/types";
 import type { SiteConfig } from "@/lib/types";
-import { Section } from "@/components/layout/Section";
-import { buttonVariants } from "@/components/ui/button";
+import { Container } from "@/components/layout/Container";
+import { ArrowUpRight, FileText, GraduationCap, Mail, Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Download, ExternalLink, Mail } from "lucide-react";
 
 type HeroSectionProps = {
   site: SiteConfig;
+  education?: Education;
+  engineersLed?: string;
+  years?: string;
+  currentCompany?: string;
 };
 
-export function HeroSection({ site }: HeroSectionProps) {
+export function HeroSection({
+  site,
+  education,
+  engineersLed = "9",
+  years = "6+",
+  currentCompany,
+}: HeroSectionProps) {
+  const titleParts = site.title.split("|").map((p) => p.trim());
+  const role = titleParts[0] ?? "Lead Software Engineer";
+  const specialty = titleParts[1] ?? "AI/LLM & Agentic Systems";
+
   return (
-    <Section id="hero" hideHeader className="pt-16 md:pt-24">
-      <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-8">
-          <p className="font-mono text-xs tracking-wide text-muted-foreground uppercase">
-            Lead Software Engineer · MERN · AI / LLM
-          </p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-[-0.03em] text-foreground md:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
-            {site.name}
-          </h1>
-          <p className="mt-3 text-lg font-medium text-[var(--text-secondary)] md:text-xl">
-            {site.title}
-          </p>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            {site.tagline}
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href={site.resumePath}
-              className={cn(buttonVariants({ size: "lg" }), "gap-2")}
-            >
-              <Download className="size-4" aria-hidden />
-              Download CV
-            </a>
-            <a
-              href="#contact"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
-            >
-              Contact Me
-            </a>
-            <a
-              href={site.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "gap-2",
-              )}
-            >
-              LinkedIn
-              <ExternalLink className="size-3.5" aria-hidden />
-            </a>
-            <a
-              href={site.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "gap-2",
-              )}
-            >
-              GitHub
-              <ExternalLink className="size-3.5" aria-hidden />
-            </a>
-            <a
-              href={`mailto:${site.email}`}
-              aria-label={`Email ${site.email}`}
-              className={cn(buttonVariants({ variant: "outline", size: "icon-lg" }))}
-            >
-              <Mail className="size-4" />
-            </a>
+    <section id="overview" className="scroll-mt-20 pt-4 pb-8 md:scroll-mt-32 md:pt-4 md:pb-14">
+      <Container>
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/70 pb-2 font-mono text-[11px] text-slate-500 md:mb-6 md:pb-3 md:text-xs">
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-cyan-500 md:bg-cyan-500" />
+            <span className="font-semibold tracking-tight text-[#090D16] md:tracking-wider">
+              [NODE_001 :: DISTRIBUTED_SYS → AGENTIC_AI]
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 text-slate-500 sm:gap-4">
+            <span className="hidden sm:inline">{site.location.toUpperCase()}</span>
+            <span className="hidden sm:inline opacity-40">•</span>
+            <span className="hidden sm:inline">ALUM: DTU_IT_2020</span>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 md:text-[11px]">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              ENV: PROD_READY
+            </span>
           </div>
         </div>
-        <aside className="h-fit rounded-xl border border-border bg-card p-5 shadow-soft lg:col-span-4">
-          <p className="font-mono text-[11px] tracking-wide text-muted-foreground uppercase">
-            Snapshot
-          </p>
-          <dl className="mt-4 space-y-4 text-sm">
-            <div>
-              <dt className="font-mono text-[11px] tracking-wide text-muted-foreground uppercase">
-                Availability
-              </dt>
-              <dd className="mt-1 font-medium text-foreground">
-                Open to Lead / Staff conversations
-              </dd>
+
+        <div className="grid grid-cols-1 items-start gap-3.5 lg:grid-cols-12 lg:gap-6">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 p-5 shadow-bento backdrop-blur-xl sm:p-10 lg:col-span-8">
+            <div className="pointer-events-none absolute -top-16 -right-16 h-44 w-44 rounded-full bg-gradient-to-bl from-sky-400/20 via-indigo-400/10 to-transparent blur-xl md:-top-24 md:-right-24 md:h-72 md:w-72 md:blur-2xl" />
+            <div className="relative z-10 space-y-4 md:space-y-6">
+              <div className="flex flex-wrap items-center gap-1.5 md:gap-2.5">
+                <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-white shadow-sm md:gap-1.5 md:px-3 md:py-1 md:text-xs">
+                  <Terminal className="size-3 text-sky-400 md:size-3.5" aria-hidden />
+                  {role}
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-sky-200 bg-sky-50 px-2 py-0.5 font-mono text-[10px] font-semibold text-sky-800 md:gap-1.5 md:px-3 md:py-1 md:text-xs">
+                  {specialty}
+                </span>
+                <span className="rounded-full border border-indigo-200 bg-indigo-50 px-2 py-0.5 font-mono text-[10px] text-indigo-700 md:px-2.5 md:py-1 md:text-xs">
+                  {years} YRS EXP
+                </span>
+              </div>
+
+              <div className="space-y-1.5 md:space-y-3">
+                <h1 className="font-heading text-3xl leading-tight font-extrabold tracking-tight text-[#090D16] sm:text-6xl sm:leading-[1.08]">
+                  {site.name}
+                </h1>
+                <p className="max-w-2xl text-[13.5px] leading-relaxed text-slate-600 md:text-lg md:leading-relaxed lg:text-xl">
+                  {highlightYears(site.tagline, years)}
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2 pt-1 md:flex-row md:flex-wrap md:items-center md:gap-3 md:pt-2">
+                <a
+                  href={site.resumePath}
+                  className="cta-gradient inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-mono text-xs font-bold tracking-wider text-white uppercase shadow-sm transition-all hover:opacity-95 hover:shadow-lg hover:shadow-sky-500/25 active:scale-[0.98] md:w-auto md:px-5 md:py-3"
+                >
+                  <FileText className="size-4" aria-hidden />
+                  [ VIEW RESUME (PDF) ]
+                </a>
+                <a
+                  href="#contact"
+                  className="hidden items-center gap-2 rounded-xl border border-slate-300/80 bg-slate-100 px-5 py-3 font-mono text-xs font-semibold tracking-wider text-[#090D16] uppercase transition-all hover:border-slate-400 hover:bg-slate-200/80 md:inline-flex"
+                >
+                  <Terminal className="size-4 text-slate-600" aria-hidden />
+                  [ INITIATE TRANSMISSION ]
+                </a>
+                <div className="grid grid-cols-3 gap-1.5 md:flex md:items-center md:gap-1.5 md:rounded-xl md:border md:border-slate-200 md:bg-slate-100/90 md:p-1">
+                  <HeroLink href={`mailto:${site.email}`} label="EMAIL" icon={Mail} />
+                  <HeroLink href={site.socials.github} label="GITHUB" external />
+                  <HeroLink href={site.socials.linkedin} label="LINKEDIN" external />
+                </div>
+              </div>
+
+              <div className="hidden flex-wrap items-center gap-4 border-t border-slate-100 pt-4 font-mono text-xs text-slate-500 md:flex">
+                <span className="flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-sky-500" />
+                  {engineersLed}-Engineer Pod Lead{currentCompany ? ` @ ${currentCompany}` : ""}
+                </span>
+                <span className="text-slate-300">•</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  100K+ users on MyAI
+                </span>
+                <span className="text-slate-300">•</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
+                  Multi-Agent RAG Orchestration
+                </span>
+              </div>
             </div>
-            <div>
-              <dt className="font-mono text-[11px] tracking-wide text-muted-foreground uppercase">
-                Active focus
-              </dt>
-              <dd className="mt-1 font-medium text-foreground">
-                Agentic systems · RAG · LLM evals
-              </dd>
+          </div>
+
+          <div className="space-y-2.5 lg:col-span-4 lg:space-y-4">
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white/90 p-3.5 shadow-bento backdrop-blur-md md:rounded-3xl md:p-6 md:backdrop-blur-xl">
+              <div className="mb-2 flex items-center justify-between border-b border-slate-100 pb-2 md:mb-4 md:pb-3">
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-sky-600 md:h-2.5 md:w-2.5" />
+                  </span>
+                  <span className="font-mono text-xs font-bold tracking-wide text-[#090D16] uppercase md:tracking-wider">
+                    OPERATIONAL_RADAR
+                  </span>
+                </div>
+                <span className="rounded-md border border-sky-200 bg-sky-50 px-2 py-0.5 font-mono text-[10px] font-bold text-sky-700 md:text-[11px]">
+                  PROD
+                </span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 font-mono text-[11px] md:grid-cols-1 md:space-y-3 md:text-xs">
+                <RadarRow label="POD_SCOPE" value={`${engineersLed} ENG`} />
+                <RadarRow label="CORE_FOCUS" value="DIST + AGENTS" />
+                <RadarRow
+                  label="CURRENT_NODE"
+                  value={currentCompany ? currentCompany.toUpperCase() : "LEAD ROLE"}
+                  className="col-span-2 hidden md:flex"
+                  valueClass="text-[#2563EB]"
+                />
+                <RadarRow
+                  label="BASE"
+                  value={site.location.toUpperCase()}
+                  className="col-span-2 hidden md:flex"
+                />
+              </div>
             </div>
-            <div>
-              <dt className="font-mono text-[11px] tracking-wide text-muted-foreground uppercase">
-                Experience
-              </dt>
-              <dd className="mt-1 font-mono text-lg font-semibold text-primary font-tabular">
-                6+ years
-              </dd>
-            </div>
-            <div>
-              <dt className="font-mono text-[11px] tracking-wide text-muted-foreground uppercase">
-                Location
-              </dt>
-              <dd className="mt-1 font-medium text-foreground">{site.location}</dd>
-            </div>
-          </dl>
-        </aside>
-      </div>
-    </Section>
+
+            {education ? (
+              <div className="relative hidden overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-5 text-white shadow-bento lg:block">
+                <div className="pointer-events-none absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-sky-500/20 blur-xl" />
+                <div className="mb-2 flex items-center justify-between font-mono text-xs text-slate-400">
+                  <span>DTU ALUMNUS // 2016-2020</span>
+                  <GraduationCap className="size-4 text-sky-400" aria-hidden />
+                </div>
+                <p className="mb-1 text-sm font-bold text-slate-100">{education.school}</p>
+                <p className="mb-2 font-mono text-xs text-sky-300">
+                  {education.degree} in {education.field}
+                </p>
+                <p className="text-xs leading-relaxed text-slate-400">
+                  {education.detail ? `${education.detail}. ` : ""}
+                  Foundations in distributed computing, systems architecture, and algorithms.
+                </p>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function highlightYears(tagline: string, years: string) {
+  const needle = `${years} years`;
+  const idx = tagline.toLowerCase().indexOf(needle.toLowerCase());
+  if (idx === -1) return tagline;
+  return (
+    <>
+      {tagline.slice(0, idx)}
+      <span className="font-semibold text-[#090D16] underline decoration-sky-300 decoration-2 underline-offset-4">
+        {tagline.slice(idx, idx + needle.length)}
+      </span>
+      {tagline.slice(idx + needle.length)}
+    </>
+  );
+}
+
+function HeroLink({
+  href,
+  label,
+  icon: Icon,
+  external,
+}: {
+  href: string;
+  label: string;
+  icon?: typeof Mail;
+  external?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className={cn(
+        "flex items-center justify-center gap-1 rounded-xl border border-slate-200 bg-slate-50 px-2 py-2 font-mono text-[11px] font-semibold text-slate-700 shadow-sm transition hover:border-sky-300 hover:bg-white hover:text-[#2563EB]",
+        "md:rounded-lg md:border-0 md:bg-white md:px-3 md:py-2 md:text-xs md:font-normal md:text-slate-600",
+      )}
+    >
+      {Icon ? <Icon className="size-3.5 text-sky-600 md:hidden" aria-hidden /> : null}
+      <span>{label}</span>
+      {external ? (
+        <ArrowUpRight className="hidden size-3.5 text-slate-400 md:inline" aria-hidden />
+      ) : null}
+    </a>
+  );
+}
+
+function RadarRow({
+  label,
+  value,
+  className,
+  valueClass,
+}: {
+  label: string;
+  value: string;
+  className?: string;
+  valueClass?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "flex items-center justify-between rounded-lg border border-slate-100 bg-slate-50 p-1.5 md:rounded-xl md:p-2",
+        className,
+      )}
+    >
+      <span className="text-slate-500">{label}:</span>
+      <span className={cn("font-bold text-[#090D16]", valueClass)}>{value}</span>
+    </div>
   );
 }

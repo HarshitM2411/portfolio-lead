@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MobileNav } from "@/components/layout/MobileNav";
 import { Container } from "@/components/layout/Container";
 import { AgenticMatchingDiagram } from "@/components/diagrams/AgenticMatchingDiagram";
 import { RagMatchingDiagram } from "@/components/diagrams/RagMatchingDiagram";
@@ -38,7 +39,7 @@ export default async function ProjectPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="py-12 md:py-16">
+      <main className="relative z-10 pt-24 pb-28 md:pt-32 md:pb-16">
         <Container className="max-w-3xl">
           <Link
             href="/#projects"
@@ -104,6 +105,7 @@ export default async function ProjectPage({ params }: PageProps) {
         </Container>
       </main>
       <Footer />
+      <MobileNav />
     </>
   );
 }
