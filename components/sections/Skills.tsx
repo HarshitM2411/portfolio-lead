@@ -7,14 +7,14 @@ type SkillsSectionProps = {
 };
 
 const labels: Record<SkillCategory, string> = {
-  Languages: "[ LANG: PRIMARY_SYNTAX ]",
-  Backend: "[ BACKEND: RUNTIMES & PROTOCOLS ]",
-  Frontend: "[ CLIENT: INTERFACES ]",
-  Databases: "[ STORAGE: PERSISTENCE & CACHE ]",
-  "AI/LLM": "[ AI / LLM: AGENTIC & RAG ]",
-  "Cloud & DevOps": "[ CLOUD & DEVOPS: TOPOLOGY ]",
-  "Observability & Testing": "[ OBSERVABILITY & TESTING ]",
-  Practices: "[ PRACTICES: GOVERNANCE ]",
+  Languages: "Languages",
+  Backend: "Backend",
+  Frontend: "Frontend",
+  Databases: "Databases",
+  "AI/LLM": "AI / LLM",
+  "Cloud & DevOps": "Cloud & DevOps",
+  "Observability & Testing": "Observability & Testing",
+  Practices: "Practices",
 };
 
 export function SkillsSection({ skills }: SkillsSectionProps) {
@@ -28,9 +28,9 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
   return (
     <Section
       id="skills"
-      index="[04_STACK_INDEX]"
+      index="Skills"
       title="Technical Stack & Architectural Arsenal"
-      meta={`TOTAL COMPONENT MODULES: ${String(total).padStart(2, "0")}`}
+      meta={`${total} modules`}
       className="py-8 md:py-14"
     >
       <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
@@ -57,7 +57,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
                 <span>{labels[group.category]}</span>
                 {featured ? (
                   <span className="rounded-full border border-sky-300 bg-sky-100 px-2 py-0.5 text-[9px] font-bold text-sky-700 md:px-2.5 md:text-[10px]">
-                    CORE FOCUS
+                    Core focus
                   </span>
                 ) : (
                   <span className="rounded bg-slate-100 px-2 py-0.5 text-slate-400">

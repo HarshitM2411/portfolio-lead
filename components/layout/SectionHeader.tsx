@@ -25,7 +25,7 @@ export function SectionHeader({
     >
       <div className="space-y-1">
         {index ? (
-          <p className="font-mono text-[11px] font-semibold tracking-wider text-[#2563EB] uppercase md:text-xs">
+          <p className="font-mono text-[11px] font-semibold tracking-wide text-[#2563EB] md:text-xs">
             {index}
           </p>
         ) : null}

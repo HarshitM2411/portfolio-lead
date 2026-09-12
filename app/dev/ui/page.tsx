@@ -27,7 +27,7 @@ export default function UiPreviewPage() {
     <main className="mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-4 py-12 md:px-10">
       <header className="space-y-2">
         <p className="font-mono text-xs tracking-wide text-muted-foreground uppercase">
-          01 // Phase 1 preview
+          01 Phase 1 preview
         </p>
         <h1 className="text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
           Precision Slate primitives

@@ -8,7 +8,7 @@ type EducationSectionProps = {
 /** Phase 3 stub — Phase 6 polish. */
 export function EducationSection({ education }: EducationSectionProps) {
   return (
-    <Section id="education" index="09 // Education" title="Education">
+    <Section id="education" index="Education" title="Education">
       <div className="rounded-xl border border-border bg-card p-5 shadow-soft md:max-w-xl">
         <h3 className="font-semibold text-foreground">{education.school}</h3>
         <p className="mt-1 text-sm text-[var(--text-secondary)]">

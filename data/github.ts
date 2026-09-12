@@ -5,7 +5,7 @@ import type { GitHubConfig } from "@/lib/types";
  * Content updates: toggle enabled / edit pinnedRepoSlugs here only.
  */
 export const github: GitHubConfig = {
-  enabled: true,
+  enabled: false,
   username: "HarshitM2411",
   profileUrl: "https://github.com/HarshitM2411/",
   pinnedRepoSlugs: [

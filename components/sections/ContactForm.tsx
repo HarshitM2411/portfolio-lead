@@ -40,7 +40,7 @@ export function ContactForm({ email }: ContactFormProps) {
     <div className="space-y-4">
       <form onSubmit={onSubmit} className="space-y-3 md:space-y-5">
         <div className="space-y-1 md:space-y-2">
-          <Label htmlFor="name">01 // CALLER_NAME</Label>
+          <Label htmlFor="name">Name</Label>
           <Input
             id="name"
             name="name"
@@ -50,7 +50,7 @@ export function ContactForm({ email }: ContactFormProps) {
           />
         </div>
         <div className="space-y-1 md:space-y-2">
-          <Label htmlFor="email">02 // SENDER_NETWORK_ADDRESS (EMAIL)</Label>
+          <Label htmlFor="email">Email</Label>
           <Input
             id="email"
             name="email"
@@ -61,7 +61,7 @@ export function ContactForm({ email }: ContactFormProps) {
           />
         </div>
         <div className="space-y-1 md:space-y-2">
-          <Label htmlFor="message">03 // INQUIRY_PAYLOAD (MESSAGE)</Label>
+          <Label htmlFor="message">Message</Label>
           <Textarea
             id="message"
             name="message"
@@ -76,7 +76,7 @@ export function ContactForm({ email }: ContactFormProps) {
           className="h-11 w-full rounded-xl py-3.5"
         >
           <Send className="size-4" aria-hidden />
-          [ TRANSMIT DISPATCH ]
+          Send
         </Button>
       </form>
 
@@ -86,7 +86,7 @@ export function ContactForm({ email }: ContactFormProps) {
           role="status"
         >
           <p className="font-bold text-emerald-800">
-            STATUS: 200 OK // DISPATCH_RECEIVED
+            Message opened
           </p>
           <p className="font-sans text-sm text-emerald-950">
             Email draft opened — hit send in your mail app to deliver it to{" "}

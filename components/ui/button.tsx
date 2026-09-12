@@ -10,7 +10,7 @@ const buttonVariants = cva(
         default:
           "bg-[#090D16] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-[#0F172A] hover:shadow-[0_4px_14px_rgba(9,13,22,0.2)]",
         gradient:
-          "cta-gradient font-mono text-xs font-bold tracking-wider text-white uppercase shadow-md shadow-sky-500/20 hover:opacity-95 hover:shadow-lg hover:shadow-sky-500/25",
+          "cta-gradient font-mono text-xs font-bold tracking-wide text-white shadow-md shadow-sky-500/20 hover:opacity-95 hover:shadow-lg hover:shadow-sky-500/25",
         outline:
           "border-slate-200/90 bg-white/80 text-[#0F172A] hover:border-indigo-400/40 hover:bg-white hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
         secondary:

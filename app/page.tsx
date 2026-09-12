@@ -10,7 +10,6 @@ import { ExperienceSection } from "@/components/sections/Experience";
 import { SkillsSection } from "@/components/sections/Skills";
 import { ProjectsSection } from "@/components/sections/Projects";
 import { NowEducationSection } from "@/components/sections/NowEducation";
-import { GitHubSection } from "@/components/sections/GitHub";
 import { ContactSection } from "@/components/sections/Contact";
 import {
   getPortfolioContent,
@@ -76,7 +75,6 @@ export default function Home() {
             showEducation={visible.education}
           />
         ) : null}
-        {visible.github ? <GitHubSection github={content.github} /> : null}
         {visible.contact ? <ContactSection site={content.site} /> : null}
       </main>
       <Footer />

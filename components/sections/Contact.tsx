@@ -13,20 +13,20 @@ export function ContactSection({ site }: ContactSectionProps) {
   return (
     <Section
       id="contact"
-      index="[05_SYSTEM_TRANSMISSION]"
+      index="Contact"
       title="Initiate Contact / Technical Inquiry"
-      meta="PROTOCOL: SECURE_INGRESS"
+      meta="Open for inquiries"
       className="py-8 md:py-16"
     >
       <div className="grid grid-cols-1 items-start gap-3 lg:grid-cols-12 lg:gap-8">
         <div className="space-y-6 rounded-3xl border border-slate-200/90 bg-white/95 p-4 shadow-bento backdrop-blur-xl sm:p-9 lg:col-span-7">
           <div className="hidden items-center justify-between border-b border-slate-100 pb-3 md:flex">
-            <span className="font-mono text-xs font-bold tracking-wider text-slate-500 uppercase">
-              TRANSMISSION_PAYLOAD
+            <span className="font-mono text-xs font-bold tracking-wide text-slate-500">
+              Message
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 font-mono text-xs font-semibold text-emerald-800">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
-              INGRESS_READY
+              Ready
             </span>
           </div>
           <ContactForm email={site.email} />
@@ -50,10 +50,10 @@ export function ContactSection({ site }: ContactSectionProps) {
 
         <aside className="hidden space-y-4 lg:col-span-5 lg:block">
           <div className="space-y-3 rounded-3xl border border-slate-200/90 bg-white/95 p-6 shadow-bento backdrop-blur-xl">
-            <div className="flex items-center justify-between font-mono text-xs font-semibold text-slate-500 uppercase">
-              <span>DIRECT_MAILTO</span>
+            <div className="flex items-center justify-between font-mono text-xs font-semibold text-slate-500">
+              <span>Email</span>
               <span className="rounded bg-blue-50 px-2 py-0.5 text-[11px] text-[#2563EB]">
-                PRIMARY INBOX
+                Primary inbox
               </span>
             </div>
             <div className="flex items-center justify-between gap-2 rounded-2xl border border-slate-200 bg-slate-50 p-3">
@@ -73,11 +73,11 @@ export function ContactSection({ site }: ContactSectionProps) {
           {site.phone ? (
             <div className="space-y-3 rounded-3xl border border-slate-200/90 bg-white/95 p-6 shadow-bento backdrop-blur-xl">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-semibold text-slate-500 uppercase">
-                  TELEPHONY_CIRCUIT
+                <span className="font-mono text-xs font-semibold text-slate-500">
+                  Phone
                 </span>
                 <span className="rounded bg-slate-100 px-2 py-0.5 font-mono text-[10px] text-slate-400">
-                  SCRAPE_PROTECTED
+                  Hidden until reveal
                 </span>
               </div>
               <PhoneReveal phone={site.phone} />
@@ -85,23 +85,23 @@ export function ContactSection({ site }: ContactSectionProps) {
           ) : null}
 
           <div className="space-y-3 rounded-3xl border border-slate-200/90 bg-white/95 p-6 font-mono text-xs shadow-bento backdrop-blur-xl">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-2 font-bold text-slate-500 uppercase">
-              <span>NODE_PROPERTIES</span>
+            <div className="flex items-center justify-between border-b border-slate-100 pb-2 font-bold text-slate-500">
+              <span>Details</span>
               <span className="h-2 w-2 rounded-full bg-emerald-500" />
             </div>
             <div className="space-y-2 text-slate-600">
               <p className="flex justify-between gap-3">
-                <span>PRIMARY_BASE:</span>
+                <span>Location</span>
                 <span className="font-semibold text-[#090D16]">{site.location}</span>
               </p>
               <p className="flex justify-between gap-3">
-                <span>REMOTE_COMPAT:</span>
+                <span>Remote</span>
                 <span className="rounded bg-emerald-50 px-2 font-bold text-emerald-700">
-                  FULL / GLOBAL READY
+                  Yes / global ready
                 </span>
               </p>
               <p className="flex justify-between gap-3">
-                <span>TIMEZONE:</span>
+                <span>Timezone</span>
                 <span className="font-semibold text-[#090D16]">IST (UTC +05:30)</span>
               </p>
             </div>
@@ -112,7 +112,7 @@ export function ContactSection({ site }: ContactSectionProps) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-[#2563EB]"
               >
-                [ GITHUB ]
+                GitHub
                 <ArrowUpRight className="size-3.5" aria-hidden />
               </a>
               <a
@@ -121,7 +121,7 @@ export function ContactSection({ site }: ContactSectionProps) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-[#2563EB]"
               >
-                [ LINKEDIN ]
+                LinkedIn
                 <ArrowUpRight className="size-3.5" aria-hidden />
               </a>
             </div>

@@ -20,13 +20,13 @@ export function Footer() {
                 {mark}
               </span>
               <span className="font-mono text-[11px] font-bold tracking-wide text-[#090D16]">
-                {site.name.toUpperCase()} // ARCH
+                {site.name}
               </span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
               <span className="font-mono text-[10px] font-semibold text-emerald-800">
-                OPERATIONAL
+                Operational
               </span>
             </div>
           </div>
@@ -37,7 +37,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-slate-600 hover:text-[#2563EB]"
             >
-              GITHUB
+              GitHub
             </a>
             <a
               href={site.socials.linkedin}
@@ -45,17 +45,17 @@ export function Footer() {
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-slate-600 hover:text-[#2563EB]"
             >
-              LINKEDIN
+              LinkedIn
             </a>
             <a
               href="#contact"
               className="flex items-center gap-1 font-bold text-sky-700 hover:text-[#2563EB]"
             >
-              [CONTACT]
+              Contact
             </a>
           </div>
           <p className="border-t border-slate-100 pt-2 text-center font-mono text-[10px] text-slate-400">
-            PRECISION ARCHITECTURE // HIGH-THROUGHPUT RUNTIME
+            Precision architecture
           </p>
         </div>
 
@@ -69,16 +69,16 @@ export function Footer() {
                 </span>
                 <span className="text-base font-bold text-[#090D16]">{site.name}</span>
               </div>
-              <p className="font-mono text-xs text-slate-500 uppercase">
-                DTU Alum // Lead Software Engineer
+              <p className="font-mono text-xs text-slate-500">
+                DTU alum · Lead Software Engineer
               </p>
               <p className="font-mono text-[11px] text-slate-400">
-                DISTRIBUTED SYSTEMS • APPLIED AI
+                Distributed systems · Applied AI
               </p>
             </div>
             <div className="space-y-2">
-              <p className="font-mono text-xs font-bold tracking-wider text-slate-700 uppercase">
-                Operational Node
+              <p className="font-mono text-xs font-bold tracking-wide text-slate-700">
+                Location
               </p>
               <p className="flex items-center gap-1.5 font-mono text-xs text-[#090D16]">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
@@ -87,8 +87,8 @@ export function Footer() {
               <p className="font-mono text-xs text-slate-500">Timezone: IST (UTC +05:30)</p>
             </div>
             <div className="space-y-2">
-              <p className="font-mono text-xs font-bold tracking-wider text-slate-700 uppercase">
-                External Registry
+              <p className="font-mono text-xs font-bold tracking-wide text-slate-700">
+                Links
               </p>
               <div className="flex flex-col gap-1.5 font-mono text-xs">
                 <a
@@ -97,7 +97,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-between text-slate-600 transition-colors hover:text-[#2563EB]"
                 >
-                  <span>[ GITHUB_REPO ]</span>
+                  <span>GitHub</span>
                   <ArrowUpRight className="size-3.5" aria-hidden />
                 </a>
                 <a
@@ -106,14 +106,14 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-between text-slate-600 transition-colors hover:text-[#2563EB]"
                 >
-                  <span>[ LINKEDIN_NET ]</span>
+                  <span>LinkedIn</span>
                   <ArrowUpRight className="size-3.5" aria-hidden />
                 </a>
                 <a
                   href={`mailto:${site.email}`}
                   className="flex items-center justify-between text-[#2563EB] transition-colors hover:underline"
                 >
-                  <span>[ MAILTO: DIRECT ]</span>
+                  <span>Email</span>
                   <Mail className="size-3.5" aria-hidden />
                 </a>
                 {showBlog ? (
@@ -121,38 +121,38 @@ export function Footer() {
                     href="/blog"
                     className="flex items-center justify-between text-slate-600 transition-colors hover:text-[#2563EB]"
                   >
-                    <span>[ BLOG ]</span>
+                    <span>Blog</span>
                     <ArrowUpRight className="size-3.5" aria-hidden />
                   </a>
                 ) : null}
               </div>
             </div>
             <div className="space-y-2">
-              <p className="font-mono text-xs font-bold tracking-wider text-slate-700 uppercase">
-                Telemetry Feed
+              <p className="font-mono text-xs font-bold tracking-wide text-slate-700">
+                Status
               </p>
               <div className="space-y-1 font-mono text-xs">
                 <p className="flex items-center justify-between text-[#090D16]">
-                  <span className="text-slate-500">SYS_STATUS:</span>
+                  <span className="text-slate-500">Status</span>
                   <span className="font-bold text-slate-800">200 OK</span>
                 </p>
                 <p className="flex items-center justify-between text-[#090D16]">
-                  <span className="text-slate-500">NODE:</span>
-                  <span className="font-bold text-emerald-700">PROD_READY</span>
+                  <span className="text-slate-500">Node</span>
+                  <span className="font-bold text-emerald-700">Ready</span>
                 </p>
                 <p className="pt-1 text-[11px] text-slate-400">
-                  BUILD: PORTFOLIO-LEAD
+                  Portfolio
                 </p>
               </div>
             </div>
           </div>
           <div className="mt-6 flex flex-col items-center justify-between gap-3 font-mono text-xs text-slate-500 sm:flex-row">
             <p>
-              © {year} {site.name.toUpperCase()}. ALL RIGHTS RESERVED.
+              © {year} {site.name}. All rights reserved.
             </p>
             <p className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
-              <span>PRECISION ARCHITECTURE // HIGH-THROUGHPUT RUNTIME</span>
+              <span>Precision architecture</span>
             </p>
           </div>
         </div>

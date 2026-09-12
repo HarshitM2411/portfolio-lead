@@ -4,11 +4,11 @@ import { Activity, Briefcase, LayoutGrid, Mail, Network } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
-  { href: "#overview", label: "SYS", icon: LayoutGrid },
-  { href: "#metrics", label: "METRICS", icon: Activity },
-  { href: "#experience", label: "TRACE", icon: Briefcase },
+  { href: "#overview", label: "Home", icon: LayoutGrid },
+  { href: "#metrics", label: "Impact", icon: Activity },
+  { href: "#experience", label: "Work", icon: Briefcase },
   { href: "#projects", label: "AI", icon: Network },
-  { href: "#contact", label: "PING", icon: Mail },
+  { href: "#contact", label: "Contact", icon: Mail },
 ] as const;
 
 export function MobileNav() {

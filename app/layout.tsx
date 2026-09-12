@@ -1,22 +1,12 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Geist, Inter, JetBrains_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { AmbientBackground } from "@/components/layout/AmbientBackground";
 import { site } from "@/data/site";
 import "./globals.css";
 
-const grotesk = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const mono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
@@ -57,7 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${grotesk.variable} ${inter.variable} ${mono.variable} h-full scroll-smooth antialiased`}
+      className={`${roboto.variable} h-full scroll-smooth antialiased`}
     >
       <body
         className="relative flex min-h-full flex-col overflow-x-hidden bg-[#FAFAFD] font-sans text-[#090D16]"

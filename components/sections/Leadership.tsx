@@ -15,14 +15,14 @@ export function LeadershipSection({ leadership }: LeadershipSectionProps) {
       <div className="pointer-events-none absolute -top-16 -right-16 h-56 w-56 rounded-full border border-sky-500/20" />
       <div className="relative z-10 space-y-4 md:space-y-5">
         <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 font-mono text-xs font-semibold tracking-wider text-sky-400 uppercase">
+          <div className="flex items-center gap-2 font-mono text-xs font-semibold tracking-wide text-sky-400">
             <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-sky-500/20 text-sky-300">
               <ShieldCheck className="size-4" aria-hidden />
             </span>
-            ENGINEERING GOVERNANCE
+            Leadership
           </div>
-          <span className="rounded-full border border-sky-400/30 bg-sky-500/20 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider text-sky-300 uppercase">
-            ACTIVE LEAD ROLE
+          <span className="rounded-full border border-sky-400/30 bg-sky-500/20 px-2 py-0.5 font-mono text-[10px] font-bold tracking-wide text-sky-300">
+            Active lead
           </span>
         </div>
         <h3
@@ -52,7 +52,7 @@ export function LeadershipSection({ leadership }: LeadershipSectionProps) {
       <div className="relative z-10 mt-4 flex items-center justify-between border-t border-slate-800/80 pt-3 font-mono text-[10px] text-slate-400 md:mt-6 md:pt-4 md:text-xs">
         <span className="flex items-center gap-1">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-          SCOPE ID: AIR-IN-POD-09
+          Air India · 9-engineer pod
         </span>
         <span className="font-semibold text-sky-400">2025 — PRESENT</span>
       </div>

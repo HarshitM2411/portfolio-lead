@@ -4,11 +4,11 @@ import { initials } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "#overview", label: "01_OVERVIEW" },
-  { href: "#experience", label: "02_EXPERIENCE" },
-  { href: "#projects", label: "03_SYSTEMS_AI" },
-  { href: "#skills", label: "04_SKILLS" },
-  { href: "#contact", label: "05_CONTACT" },
+  { href: "#overview", label: "Overview" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact" },
 ] as const;
 
 type HeaderProps = {
@@ -33,11 +33,11 @@ export function Header({ className }: HeaderProps) {
           <a href="#overview" className="flex items-center gap-2.5">
             <BrandMark compact label={mark} />
             <span className="flex flex-col">
-              <span className="font-mono text-xs font-bold tracking-tight text-[#090D16] uppercase leading-tight">
-                HM.SYS
+              <span className="font-mono text-xs font-bold tracking-tight text-[#090D16] leading-tight">
+                {site.name}
               </span>
               <span className="font-mono text-[9px] leading-none text-slate-400">
-                LEAD_ENG
+                Lead engineer
               </span>
             </span>
           </a>
@@ -68,7 +68,7 @@ export function Header({ className }: HeaderProps) {
                   {site.name}
                 </span>
                 <span className="block font-mono text-[10px] leading-none text-slate-400">
-                  LEAD_ENG // DTU_2020
+                  Lead engineer
                 </span>
               </span>
             </a>
@@ -122,7 +122,7 @@ export function Header({ className }: HeaderProps) {
               className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-3.5 py-1.5 font-mono text-xs font-semibold tracking-wide text-white shadow-md shadow-slate-900/10 transition-all hover:scale-[1.02] hover:bg-slate-800 hover:shadow-lg active:scale-[0.98]"
             >
               <Download className="size-3.5 text-sky-400" aria-hidden />
-              RESUME (PDF)
+                  Resume
             </a>
           </div>
         </div>

@@ -21,7 +21,7 @@ export function PhoneReveal({ phone, compact = false }: PhoneRevealProps) {
           {phone}
         </a>
         <span className="rounded bg-emerald-100 px-2.5 py-0.5 text-[10px] font-bold text-emerald-800">
-          VERIFIED
+          Verified
         </span>
       </div>
     );
@@ -31,15 +31,15 @@ export function PhoneReveal({ phone, compact = false }: PhoneRevealProps) {
     return (
       <div className="flex w-full items-center justify-between">
         <span className="font-mono text-[11px] text-slate-500">
-          VOICE_CIRCUIT: SECURED
+          Phone hidden
         </span>
         <button
           type="button"
           onClick={() => setRevealed(true)}
-          className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-sky-700 uppercase hover:underline"
+          className="inline-flex items-center gap-1 font-mono text-[11px] font-bold text-sky-700 hover:underline"
         >
           <Eye className="size-3.5" aria-hidden />
-          [ REVEAL PHONE ]
+          Reveal phone
         </button>
       </div>
     );
@@ -49,9 +49,9 @@ export function PhoneReveal({ phone, compact = false }: PhoneRevealProps) {
     <button
       type="button"
       onClick={() => setRevealed(true)}
-      className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 font-mono text-xs text-slate-600 uppercase transition-colors hover:bg-slate-100 hover:text-[#090D16]"
+      className="flex w-full items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 font-mono text-xs text-slate-600 transition-colors hover:bg-slate-100 hover:text-[#090D16]"
     >
-      <span>[ REVEAL SECURE PHONE ]</span>
+      <span>Reveal phone</span>
       <Eye className="size-4 text-slate-500" aria-hidden />
     </button>
   );

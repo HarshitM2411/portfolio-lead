@@ -20,13 +20,13 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
   const last = experience[experience.length - 1];
   const trace =
     first && last
-      ? `TRACE: ${last.start.slice(0, 4)} → PRESENT`
-      : "TRACE: CAREER";
+      ? `${last.start.slice(0, 4)} — present`
+      : "Career";
 
   return (
     <Section
       id="experience"
-      index="[02_CAREER_TRACK]"
+      index="Experience"
       title="Engineering & Systems Timeline"
       meta={trace}
       className="py-8 md:py-16"
@@ -60,9 +60,9 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
                       {job.company}
                     </h3>
                     {current ? (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-2 py-0.5 font-mono text-[10px] font-bold text-sky-700 uppercase sm:text-[11px]">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-2 py-0.5 font-mono text-[10px] font-bold text-sky-700 sm:text-[11px]">
                         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sky-500" />
-                        CURRENT_STATION
+                        Current
                       </span>
                     ) : null}
                   </div>
@@ -87,7 +87,7 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
                 <Accordion className="md:hidden">
                   <AccordionItem value={job.id} className="border-0">
                     <AccordionTrigger className="py-1 font-mono text-[11px] font-semibold text-sky-700 hover:no-underline">
-                      [+] VIEW ARCHITECTURE METRICS
+                      [+] View details
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="flex flex-col gap-2 rounded-xl border-t border-slate-100 bg-slate-50/90 p-2.5 text-xs text-slate-600">
@@ -144,8 +144,8 @@ function JobStack({
   if (!stack?.length) return null;
   return (
     <div className="mt-3 flex flex-wrap items-center gap-1 border-t border-slate-100 pt-3 sm:mt-5 sm:gap-2 sm:pt-4">
-      <span className="mr-1 hidden font-mono text-xs text-slate-400 uppercase sm:inline">
-        TECH_SPECS:
+      <span className="mr-1 hidden font-mono text-xs text-slate-400 sm:inline">
+        Stack:
       </span>
       {stack.map((t, i) => (
         <span

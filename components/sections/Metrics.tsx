@@ -61,16 +61,16 @@ export function MetricsSection({ metrics }: MetricsSectionProps) {
 
   return (
     <Section id="metrics" hideHeader className="py-4 md:py-8">
-      <div className="mb-2.5 flex items-center justify-between px-0.5 font-mono text-[11px] text-slate-500 uppercase md:mb-5 md:text-xs">
+      <div className="mb-2.5 flex items-center justify-between px-0.5 font-mono text-[11px] text-slate-500 md:mb-5 md:text-xs">
         <div className="flex items-center gap-2">
           <Activity className="hidden size-4 text-sky-600 md:inline" aria-hidden />
           <span className="font-bold tracking-wider text-slate-500 md:font-semibold md:text-[#090D16]">
-            // AGGREGATED RUNTIME TELEMETRY
+            Impact
           </span>
         </div>
         <span className="flex items-center gap-1 font-semibold text-sky-600 md:text-[11px] md:text-slate-400">
           <span className="h-1.5 w-1.5 rounded-full bg-sky-500 md:hidden" />
-          AUDITED PRODUCTION METRICS
+          Production metrics
         </span>
       </div>
 

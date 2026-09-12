@@ -26,14 +26,14 @@ export function NowEducationSection({
           {showNow ? (
             <article className="relative space-y-1.5 overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-sky-50/60 via-white to-white p-4 shadow-bento md:space-y-4 md:rounded-3xl md:p-8">
               <div className="flex items-center justify-between border-b border-slate-100 pb-2 md:pb-3">
-                <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold tracking-wider text-sky-800 uppercase md:text-xs md:text-sky-700">
+                <span className="flex items-center gap-1.5 font-mono text-[10px] font-bold tracking-wide text-sky-800 md:text-xs md:text-sky-700">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" />
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-500" />
                   </span>
-                  // ACTIVE_RADAR: NOW
+                  Now
                 </span>
-                <span className="font-mono text-[10px] text-slate-400">LAB_BRANCH</span>
+                <span className="font-mono text-[10px] text-slate-400">In progress</span>
               </div>
               <h3 className="hidden font-heading text-xl font-bold tracking-tight text-[#090D16] sm:block sm:text-2xl">
                 What I&apos;m Exploring &amp; Prototyping
@@ -48,7 +48,7 @@ export function NowEducationSection({
               ))}
               <p className="hidden items-center gap-2 pt-2 font-mono text-xs text-slate-500 md:flex">
                 <span className="h-1.5 w-1.5 rounded-full bg-sky-600" />
-                STATUS: EXPERIMENTAL RUNTIME // LAB_BRANCH
+                Experimental / lab work
               </p>
             </article>
           ) : null}
@@ -59,8 +59,8 @@ export function NowEducationSection({
               className="scroll-mt-24 space-y-1 overflow-hidden rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-bento backdrop-blur-md md:space-y-4 md:rounded-3xl md:p-8"
             >
               <div className="flex items-center justify-between border-b border-slate-100 pb-2 md:pb-3">
-                <span className="font-mono text-[10px] font-bold tracking-wider text-slate-500 uppercase md:text-xs">
-                  // ACADEMIC_REGISTRY
+                <span className="font-mono text-[10px] font-bold tracking-wide text-slate-500 md:text-xs">
+                  Education
                 </span>
                 <GraduationCap className="hidden size-5 text-slate-400 md:block" aria-hidden />
                 <span className="font-mono text-[10px] font-semibold text-[#2563EB] md:hidden">
@@ -81,7 +81,7 @@ export function NowEducationSection({
               </p>
               <p className="hidden items-center gap-2 pt-2 font-mono text-xs text-slate-500 md:flex">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                SESSION: {formatRange(education.start, education.end)}
+                {formatRange(education.start, education.end)}
               </p>
             </article>
           ) : null}

@@ -8,7 +8,7 @@ type NowSectionProps = {
 /** Phase 3 stub — Phase 6 polish. */
 export function NowSection({ items }: NowSectionProps) {
   return (
-    <Section id="now" index="08 // Now" title="Currently exploring">
+    <Section id="now" index="Now" title="Currently exploring">
       <ul className="max-w-3xl space-y-2">
         {items.map((item) => (
           <li

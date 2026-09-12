@@ -12,8 +12,8 @@ export function AboutSection({ paragraphs, embedded = false }: AboutSectionProps
           <div className="space-y-1">
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-[#2563EB]" />
-              <span className="font-mono text-xs font-semibold tracking-wider text-[#2563EB] uppercase">
-                [01_PERSPECTIVE]
+              <span className="font-mono text-xs font-semibold tracking-wide text-[#2563EB]">
+                Perspective
               </span>
             </div>
             <h2

@@ -14,8 +14,8 @@ export function GitHubSection({ github }: GitHubSectionProps) {
   return (
     <Section
       id="github"
-      index="[06_EXTERNAL_REGISTRY]"
-      title="GitHub presence"
+      index="GitHub"
+      title="GitHub"
       meta={`@${github.username}`}
       className="py-8 md:py-10"
     >
