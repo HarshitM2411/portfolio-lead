@@ -58,7 +58,7 @@ Define **how** the site is built so that:
 | One primary action | Hero emphasizes **View Resume**; contact and socials are secondary |
 | Progressive enhancement | Expand/collapse and motion enhance; content and diagrams remain usable without JS/motion |
 | Migration-ready | Data shapes and MDX collections should map cleanly to a headless/Git CMS later |
-| Dark-only v1 | No theme provider / light variant in the architecture for v1 |
+| Light-only v1 | Precision Slate & Electric Cyan; no dark-mode toggle / next-themes in v1 |
 
 ---
 
@@ -69,12 +69,12 @@ Define **how** the site is built so that:
 | Framework | Next.js (App Router) | File-based routes, Metadata API, `next/image` |
 | Language | TypeScript | Strict typing for content schemas |
 | UI components | **shadcn/ui** | CLI-managed copy-in components under `components/ui`; Radix primitives + CVA; owned source (not a black-box npm UI kit) |
-| Styling | Tailwind CSS + shadcn CSS variables | Map design-prompt tokens into shadcn theme vars in `app/globals.css` (`--background`, `--foreground`, `--primary`, `--border`, `--radius`, etc.) |
+| Styling | Tailwind CSS + shadcn CSS variables | Map **Precision Slate** tokens from `docs/web-design/DESIGN.md` into shadcn vars (`--background` ← `#F8FAFC`, `--foreground` ← `#0F172A`, `--primary` ← `#0284C7`, hairline borders, soft radii) |
 | Utilities | `class-variance-authority`, `clsx`, `tailwind-merge` (`cn` in `lib/utils.ts`) | Standard shadcn companion utils |
 | Icons | `lucide-react` (shadcn default) | Use sparingly; avoid icon-row clutter |
 | Content (structured) | `/data/*.ts` (preferred over loose JSON for types/imports) | Experience, skills, metrics, site config |
 | Content (long-form) | MDX under `content/` | Case-study depth, future blog posts |
-| Fonts | `next/font` | Distinctive grotesk + mono (see design prompt); no Inter/system default as primary |
+| Fonts | `next/font` | **Geist** (sans) + **JetBrains Mono** (mono) per web-design DESIGN.md |
 | Forms | Formspree / Getform / EmailJS + `mailto:` fallback; shadcn `Input` / `Textarea` / `Label` / `Button` for UI | Config via env (`NEXT_PUBLIC_FORM_*`) |
 | Analytics (optional) | `@vercel/analytics` or Plausible | Prefer cookieless where possible |
 | Hosting | Vercel | Git-connected deploys; static-friendly |
@@ -82,7 +82,7 @@ Define **how** the site is built so that:
 
 **Explicitly not in stack (v1):** Prisma/DB, Auth.js, tRPC, custom API routes for content, Sanity/Contentful/Decap, PDF generation libraries, alternate component libraries (MUI, Chakra, Ant Design, raw Radix-only without shadcn).
 
-**shadcn usage rules:** Add only components that sections need (`npx shadcn@latest add …`). Restyle for Systems Engineer (hairline borders, minimal radius, no soft shadow card kit)—do not ship the default “SaaS shadcn” look. Dark-only v1: configure a single dark theme; no next-themes light toggle.
+**shadcn usage rules:** Add only components that sections need (`npx shadcn@latest add …`). Restyle to Precision Slate & Electric Cyan (cool slate canvas, cyan primary, hairline borders, soft-technical radii per DESIGN.md)—do not ship stock shadcn purple or the old dark theme. Light-only v1: no next-themes dark toggle.
 
 ---
 
@@ -387,21 +387,23 @@ Do not add large unused shadcn surfaces (tables, data calendars, carousels, char
 | Motion | One load moment (e.g. timeline draw) | CSS/`@media (prefers-reduced-motion: reduce)` static fallback |
 | Diagrams | Static SVG/image first | Interactive enhancements optional, never required for meaning |
 
-### 9.5 Styling architecture (shadcn + design tokens)
+### 9.5 Styling architecture (shadcn + Precision Slate tokens)
 
 - Initialize shadcn with RSC + Tailwind; commit `components.json`.
-- In `app/globals.css`, map Systems Engineer palette onto shadcn semantic variables, e.g.:
-  - `--background` ← `#0E1116`
-  - `--foreground` ← `#F4F5F7`
-  - `--muted-foreground` / borders ← `#8A93A3`
-  - `--primary` ← `#4FA3D1` (accent; use sparingly)
-  - `--radius` ← `0–0.25rem` (minimal; consistent)
-- Override component classes where defaults fight the design (shadows, large radii, soft cards).
-- Layout: asymmetric panel grid on desktop → single column ~360px+.
-- Hairline `1px` borders; no shadow-driven card kit.
-- Mono only for dates, tags, metrics, indices (`next/font` mono + Tailwind `font-mono`).
-- Shared `Section` layout primitive: id/anchor, optional index label, title, children — composed with `Separator` where useful.
-- Dark-only: set dark tokens as the root theme; do not wire `next-themes` light mode in v1.
+- In `app/globals.css`, map Precision Slate & Electric Cyan onto shadcn semantic variables, e.g.:
+  - `--background` ← `#F8FAFC` (`bg-base`)
+  - `--foreground` ← `#0F172A` (`text-primary`)
+  - `--muted-foreground` ← `#64748B`
+  - `--card` ← `#FFFFFF`
+  - `--border` ← `#E2E8F0`
+  - `--primary` ← `#0284C7` (cyan accent)
+  - `--radius` ← soft-technical (`0.25rem`–`0.75rem` per DESIGN.md)
+- Follow elevation/shadow tokens from `docs/web-design/DESIGN.md` (cool ambient, not muddy).
+- Layout: max container `1200px`; breakpoints per DESIGN.md (mobile ≤767, tablet 768–1023, desktop ≥1024).
+- Mono (JetBrains Mono) only for dates, tags, metrics, indices.
+- Shared `Section` layout primitive; frosted glass header as in mocks.
+- Light-only: do not wire `next-themes` dark mode in v1.
+- Visual QA against `docs/web-design/code.html` and `docs/responsive-design/code.html`.
 
 ---
 
@@ -582,7 +584,7 @@ Without changing section components:
 - Real-time chat or presence
 - Automated PDF generation from site data
 - Alternate full UI kits (MUI, Chakra, Ant Design) — **shadcn/ui** is the chosen component layer
-- Light/dark theme system (v1)
+- Light/dark theme system (v1) — **light-only** Precision Slate; no dark toggle
 
 ---
 
@@ -591,7 +593,7 @@ Without changing section components:
 Suggested order so architecture stays coherent:
 
 1. Scaffold Next.js App Router + Tailwind + `next/font` + root layout
-2. Init **shadcn/ui** (`components.json`, `lib/utils.ts`, `globals.css` tokens mapped to design prompt); add baseline primitives (`button`, `badge`, `separator`, `accordion`/`collapsible`, form controls)
+2. Init **shadcn/ui** (`components.json`, `lib/utils.ts`, `globals.css` tokens mapped to **Precision Slate** / `docs/web-design/DESIGN.md`); add baseline primitives (`button`, `badge`, `separator`, `accordion`/`collapsible`, form controls)
 3. Define `lib/types.ts` + empty `/data` modules
 4. `Section` / layout primitives + Home composition with skip-empty
 5. Hero → Metrics → About → Leadership → Experience → Skills → Projects → Now → Education → Contact (compose with shadcn)

@@ -39,7 +39,7 @@ Catalog of edge cases, expected handling, and verification. Derived from `docs/a
 | EC-19 | Narrow mobile (~360px) | Resolved | Single column; timeline/metrics remain legible |
 | EC-20 | Very long skill lists / tag overflow | Resolved | Wrap chips; no horizontal page scroll |
 | EC-21 | Missing env vars | Resolved | Document; form/OG may degrade; fix before prod |
-| EC-22 | Dark-only vs user light preference | Locked | Dark-only v1; no half light theme |
+| EC-22 | Color mode / `prefers-color-scheme` | Locked | **Light-only** Precision Slate; no dark toggle in v1 |
 | EC-23 | GitHub API rate limit / widget fail | Optional | Prefer static links; degrade panel or hide |
 | EC-24 | Testimonials/certs/blog empty at launch | Resolved | Same as EC-06 — hide |
 | EC-25 | Multiple featured projects | Resolved | Support N featured; don’t force equal depth on all three |
@@ -338,14 +338,14 @@ Catalog of edge cases, expected handling, and verification. Derived from `docs/a
 
 ### EC-22 — Color mode / `prefers-color-scheme`
 
-**Why it matters:** Users on light OS; architecture chose dark-only.
+**Why it matters:** OS may prefer dark; product chose luminous light canvas.
 
 **Handling:**
-- Ship dark-only tokens at root
-- Do not add incomplete light theme or toggle in v1
-- Accept OS light preference without flipping the site
+- Ship Precision Slate light tokens at root
+- Do not add dark theme or toggle in v1
+- Accept OS dark preference without flipping the site
 
-**Verify:** No theme switcher; site remains dark.
+**Verify:** No theme switcher; site remains light slate/cyan.
 
 **Implementation phase:** 1
 
@@ -476,7 +476,7 @@ Run before Phase 9 sign-off (and on production smoke):
 - [ ] EC-15 Bad project slug
 - [ ] EC-16 Broken form endpoint
 - [ ] EC-19 360px layout
-- [ ] EC-22 No light toggle
+- [ ] EC-22 No dark toggle (light-only)
 - [ ] EC-30 No out-of-scope backend/CMS
 
 Optional if enabled: EC-07, EC-23, print `/resume`, blog empty-hide.

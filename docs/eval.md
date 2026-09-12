@@ -50,11 +50,11 @@ Use at the end of each implementation phase before starting the next.
 - [ ] `.env.example` lists `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_FORM_ENDPOINT`
 
 ### Phase 1 — Design system & shadcn
-- [ ] Dark-only; no light-mode toggle
-- [ ] Tokens map to Systems Engineer palette (not stock shadcn purple)
-- [ ] Minimal radius; hairline borders; no soft-shadow card kit
+- [ ] Light-only Precision Slate; no dark-mode toggle
+- [ ] Tokens map to Precision Slate (`docs/web-design/DESIGN.md`), not stock shadcn purple
+- [ ] Soft-technical radii + cool ambient elevation per DESIGN.md
 - [ ] Baseline primitives present only as needed (`button`, `badge`, `separator`, accordion/collapsible, form controls)
-- [ ] Primary accent contrast acceptable on `#0E1116`
+- [ ] Primary `#0284C7` contrast acceptable on `#F8FAFC` / white
 
 ### Phase 2 — Content model
 - [ ] `lib/types.ts` + `/data/*.ts` compile
@@ -144,7 +144,7 @@ Use at the end of each implementation phase before starting the next.
 
 ### 5.2 Accessibility
 - [ ] Semantic headings in order per section
-- [ ] Contrast: text and primary controls on dark bg
+- [ ] Contrast: text and primary controls on light canvas
 - [ ] Focus visible; full keyboard path
 - [ ] Form labels associated
 - [ ] Informative images have alt; decorative SVG `aria-hidden`
@@ -163,10 +163,11 @@ Use at the end of each implementation phase before starting the next.
 - [ ] Desktop asymmetric panel language preserved (not a totally different theme)
 
 ### 5.5 Design-system fidelity (spot check)
-- [ ] Dark-only Systems Engineer look
+- [ ] Light-only Precision Slate & Electric Cyan look
 - [ ] shadcn used but restyled (not default SaaS kit)
 - [ ] No Inter-as-primary / purple gradient / cream-terracotta clichés
 - [ ] Mono reserved for dates, tags, metrics, indices
+- [ ] Visual QA vs `docs/web-design/code.html` / `docs/responsive-design/code.html`
 
 ---
 
@@ -179,7 +180,7 @@ Use at the end of each implementation phase before starting the next.
 | Hide empty | Set testimonials to `[]`, reload | Section absent |
 | One primary CTA | Inspect hero | Resume primary only |
 | shadcn lean | List `components/ui` | No unused tables/charts/carousels |
-| Dark-only | UI inspection | No theme toggle |
+| Light-only | UI inspection | No theme toggle |
 | Progressive enhancement | Disable JS or block hydration for diagram/critical copy | Core content still readable |
 
 ---

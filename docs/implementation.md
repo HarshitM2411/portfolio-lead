@@ -55,22 +55,22 @@ Phase-wise build plan derived from `docs/architecture.md`. Visual rules: `docs/d
 
 ### Tasks
 - [ ] Init shadcn (`components.json`, RSC, Tailwind aliases, `lib/utils.ts` / `cn`)
-- [ ] Map design-prompt palette into `app/globals.css` shadcn vars:
-  - background `#0E1116`, foreground `#F4F5F7`, muted/border `#8A93A3`, primary `#4FA3D1`
-  - `--radius` minimal (`0`–`0.25rem`)
-- [ ] Dark-only root theme — **do not** add `next-themes` light toggle
+- [ ] Map Precision Slate palette into `app/globals.css` shadcn vars (from `docs/web-design/DESIGN.md`):
+  - background `#F8FAFC`, foreground `#0F172A`, muted `#64748B`, border `#E2E8F0`, primary `#0284C7`
+  - `--radius` soft-technical (`0.25rem`–`0.75rem`)
+- [ ] Light-only root theme — **do not** add `next-themes` dark toggle
 - [ ] Add only baseline primitives: `button`, `badge`, `separator`, `accordion` and/or `collapsible`, `input`, `textarea`, `label`
-- [ ] Restyle defaults: hairline borders, kill soft shadows / large radii / SaaS card chrome
-- [ ] Optional quiet grid/noise background utility (atmosphere without decorative gradients)
-- [ ] Verify contrast of primary on background; adjust token if needed
+- [ ] Restyle defaults to match web-design / responsive-design mocks (cool slate, cyan CTAs, hairline borders, frosted nav-ready tokens)
+- [ ] Optional quiet grid/atmosphere on canvas if mock implies it — keep subtle
+- [ ] Verify primary `#0284C7` contrast on white/canvas surfaces
 
 ### Deliverables
 - Themed shadcn kit in `components/ui`
 - Living token source in `globals.css`
 
 ### Exit criteria
-- Primitives render on a throwaway preview page (or Story-less sandbox section) with correct dark look
-- No Inter-as-primary / stock shadcn purple aesthetic
+- Primitives render on a throwaway preview page (or Story-less sandbox section) with correct **light** Precision Slate look
+- No Inter-as-primary / stock shadcn purple / old dark `#0E1116` theme
 
 ---
 

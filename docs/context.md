@@ -28,7 +28,7 @@ Content and layout must be skimmable *and* expandable — not one or the other.
 | UI library | **shadcn/ui** — primitives live in `components/ui` (Tailwind + Radix); restyle via CSS variables to match `docs/design-prompt.md` |
 | Hosting | Vercel |
 | Content model | Scalable local data — easy to add/edit jobs, projects, skills without touching layout |
-| Design | “Systems Engineer” direction in `docs/design-prompt.md` — not inventing a new visual system |
+| Design | **Precision Slate & Electric Cyan** (light) — `docs/web-design/*` + `docs/responsive-design/*`; summary in `docs/design-prompt.md` |
 
 **Out of scope (v1):** backend APIs, auth, DB, CMS/admin, real-time features, auto-generated resume PDF from site data.
 
@@ -78,7 +78,7 @@ Content and layout must be skimmable *and* expandable — not one or the other.
 | Topic | Decision |
 |---|---|
 | Primary hero CTA | **View Resume** (static PDF). Contact secondary; GitHub/LinkedIn quiet links |
-| Color mode | **Dark only** for v1 |
+| Color mode | **Light only** for v1 (Precision Slate & Electric Cyan) |
 | Contact | Third-party form embed + `mailto:` fallback; no custom backend |
 | Phone | Hidden by default (click-to-reveal or omit) |
 | Resume | Static PDF in `/public` is the download source of truth for v1 |
@@ -111,4 +111,6 @@ Content and layout must be skimmable *and* expandable — not one or the other.
 ## Related docs
 
 - `docs/problemstatement.md` — full problem, edge cases, scope
-- `docs/design-prompt.md` — Stitch / UI visual system and section presentation
+- `docs/design-prompt.md` — UI direction summary
+- `docs/web-design/` — desktop design system + HTML mock
+- `docs/responsive-design/` — mobile design system + HTML mock

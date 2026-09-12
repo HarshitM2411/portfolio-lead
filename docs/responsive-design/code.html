@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Harshit Meena — Lead Software Engineer &amp; Applied AI Architect</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            canvas: "#F8FAFC",
+            "canvas-alt": "#F1F5F9",
+            surface: "#FFFFFF",
+            ink: {
+              primary: "#090D16",
+              secondary: "#475569",
+              muted: "#64748B",
+              faint: "#94A3B8"
+            },
+            brand: {
+              blue: "#2563EB",
+              cyan: "#0284C7",
+              teal: "#0D9488",
+              indigo: "#4F46E5",
+              violet: "#7C3AED"
+            }
+          },
+          fontFamily: {
+            sans: ["Geist", "Inter", "-apple-system", "system-ui", "sans-serif"],
+            mono: ["JetBrains Mono", "SFMono-Regular", "monospace"]
+          },
+          boxShadow: {
+            glow: "0 0 40px -10px rgba(56, 189, 248, 0.3)",
+            glass: "0 8px 32px 0 rgba(15, 23, 42, 0.06), 0 1px 2px 0 rgba(15, 23, 42, 0.04)",
+            bento: "0 2px 8px -2px rgba(15, 23, 42, 0.04), 0 12px 24px -6px rgba(15, 23, 42, 0.06)",
+            "bento-hover": "0 8px 30px -4px rgba(14, 165, 233, 0.12), 0 20px 35px -8px rgba(15, 23, 42, 0.08)"
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAFD;
+        color: #090D16;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 16px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .bg-grid-pattern {
+      background-size: 28px 28px;
+      background-image: 
+        linear-gradient(to right, rgba(203, 213, 225, 0.3) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(203, 213, 225, 0.3) 1px, transparent 1px);
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.04); }
+    }
+    .animate-aurora {
+      animation: pulse-slow 9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#FAFAFD] font-sans text-ink-primary antialiased selection:bg-sky-100 selection:text-sky-900 relative min-h-screen overflow-x-hidden">
+<!-- AMBIENT AURORA LUMINA BACKDROP -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-[12%] left-1/2 -translate-x-1/2 w-[420px] h-[360px] bg-gradient-to-tr from-cyan-200/50 via-sky-300/35 to-indigo-200/40 rounded-full blur-[90px] animate-aurora"></div>
+<div class="absolute top-[42%] -left-[140px] w-[320px] h-[320px] bg-gradient-to-br from-indigo-200/25 to-sky-200/30 rounded-full blur-[80px]"></div>
+<div class="absolute top-[78%] -right-[120px] w-[340px] h-[340px] bg-gradient-to-bl from-teal-200/30 to-blue-200/25 rounded-full blur-[90px]"></div>
+<div class="absolute inset-0 bg-grid-pattern opacity-50"></div>
+</div>
+<!-- 1. STICKY FROSTED HEADER & TOP BAR -->
+<header class="fixed top-0 inset-x-0 z-50 pt-safe bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-glass">
+<div class="h-14 px-3.5 flex items-center justify-between max-w-md mx-auto">
+<div class="flex items-center gap-2.5">
+<!-- Brand Topology Logo https://lh3.googleusercontent.com/aida/AEtjO1XcUQtIju5eLIle77T1WtyLuDPkDWltIDhvvnZj0dBj6H6BQ4FgaroausJgzPuyc87wsudofLcHQgFugwQCjHmkVi96RS16ES1YqsKccDlsLS5xAhDoUNuH_NOdYOxiAO0clu-FMw40pWl0Y7XDq-iDrvyBhYvDukHUIgh1QkZgvFtRt9kMJb2gk3BBgb89uWLRCjig1Weq-7o_AxbboR_ur8P8b2CByLmkmD_B11tuB4NsVMTqu2kDAvg -->
+<a class="flex items-center gap-2 group" href="#overview">
+<div class="w-8 h-8 rounded-lg bg-[#13171F] border border-[#232936] p-1 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<circle cx="14" cy="16" fill="#4FA3D1" r="3.2"></circle>
+<circle cx="34" cy="16" fill="#4FA3D1" r="3.2"></circle>
+<circle cx="24" cy="24" fill="#F4F5F7" r="3.2"></circle>
+<circle cx="14" cy="32" fill="#8A93A3" r="3.2"></circle>
+<circle cx="34" cy="32" fill="#4FA3D1" r="3.2"></circle>
+<path d="M14 16 L24 24 L34 16 M14 32 L24 24 L34 32 M14 16 L14 32 M34 16 L34 32" stroke="#4FA3D1" stroke-opacity="0.85" stroke-width="1.6"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-mono text-xs font-bold tracking-tight text-ink-primary uppercase leading-tight">HM.SYS</span>
+<span class="font-mono text-[9px] text-ink-faint leading-none">LEAD_ENG</span>
+</div>
+</a>
+</div>
+<!-- Header Right Actions: Live Status + Resume -->
+<div class="flex items-center gap-2">
+<div class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-emerald-50/90 border border-emerald-200/80 text-[10px] font-mono font-semibold text-emerald-800">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="tracking-tight">OPEN // Q2 '25</span>
+</div>
+<a class="h-8 px-2.5 rounded-xl bg-slate-900 text-white font-mono text-[11px] font-bold tracking-wide flex items-center gap-1 shadow-sm active:scale-95 transition-all" href="#contact-module">
+<span class="material-symbols-outlined text-[14px] text-sky-400">download</span>
+<span>CV</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT (Mobile Optimized) -->
+<main class="flex-1 w-full pt-16 pb-28 px-3.5 flex flex-col gap-6 max-w-md mx-auto relative z-10">
+<!-- 2. COMPACT EDITORIAL HERO SECTION -->
+<section class="flex flex-col pt-3 gap-3.5" id="overview">
+<!-- Node Metadata Badge Strip -->
+<div class="flex items-center justify-between font-mono text-[11px] text-ink-muted border-b border-slate-200/70 pb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+<span class="font-semibold text-ink-primary tracking-tight">[NODE_001 :: SYS → AGENTS]</span>
+</div>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold text-[10px]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          PROD_READY
+        </span>
+</div>
+<!-- Main Profile Card -->
+<div class="bg-white/95 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-5 shadow-bento relative overflow-hidden">
+<!-- Ambient corner glow -->
+<div class="absolute -top-16 -right-16 w-44 h-44 bg-gradient-to-bl from-sky-400/20 via-indigo-400/10 to-transparent rounded-full blur-xl pointer-events-none"></div>
+<div class="flex flex-col gap-3 relative z-10">
+<!-- Role Pills -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-900 text-white font-mono text-[10px] font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[12px] text-sky-400">terminal</span>
+              Lead Software Engineer
+            </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sky-50 border border-sky-200 text-sky-800 font-mono text-[10px] font-semibold">
+<span class="material-symbols-outlined text-[12px] text-sky-600">hub</span>
+              Applied AI Architect
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-mono text-[10px]">
+              6+ YRS EXP
+            </span>
+</div>
+<!-- Name & Bio -->
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-ink-primary leading-tight font-sans">
+              Harshit Meena
+            </h1>
+<p class="text-[13.5px] text-ink-secondary leading-relaxed pt-1.5 font-normal">
+              Lead Software Engineer &amp; Applied AI Architect. <span class="text-ink-primary font-semibold underline decoration-sky-300 underline-offset-4">6+ years</span> architecting fault-tolerant distributed platforms and production applied AI/LLM agentic workflows at enterprise scale.
+            </p>
+</div>
+<!-- Primary Actions -->
+<div class="flex flex-col gap-2 pt-1">
+<a class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm hover:shadow-sky-500/20 active:scale-[0.98] transition-all" href="#contact-module">
+<span class="material-symbols-outlined text-[17px]">description</span>
+<span>[ VIEW RESUME (PDF) ]</span>
+</a>
+<div class="grid grid-cols-3 gap-1.5">
+<a class="py-2 px-2 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 flex items-center justify-center gap-1 font-mono text-[11px] font-semibold text-slate-700 hover:text-brand-blue hover:border-sky-300 transition shadow-xs" href="mailto:harshitmeena.dev@gmail.com">
+<span class="material-symbols-outlined text-[14px] text-sky-600">mail</span>
+<span>EMAIL</span>
+</a>
+<a class="py-2 px-2 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 flex items-center justify-center gap-1 font-mono text-[11px] font-semibold text-slate-700 hover:text-brand-blue hover:border-sky-300 transition shadow-xs" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[14px] text-sky-600">code</span>
+<span>GITHUB</span>
+</a>
+<a class="py-2 px-2 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 flex items-center justify-center gap-1 font-mono text-[11px] font-semibold text-slate-700 hover:text-brand-blue hover:border-sky-300 transition shadow-xs" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[14px] text-sky-600">hub</span>
+<span>LINKEDIN</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- DYNAMIC TELEMETRY RADAR PILL -->
+<div class="p-3.5 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-bento flex flex-col gap-2 font-mono text-xs">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-bold text-ink-primary tracking-wide">CLUSTER_RADAR</span>
+</div>
+<span class="text-[10px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">OPTIMAL 99.98%</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-[11px]">
+<div class="flex items-center justify-between p-1.5 rounded-lg bg-slate-50 border border-slate-100">
+<span class="text-ink-muted">POD_SCOPE:</span>
+<span class="font-bold text-ink-primary">9 ENG</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded-lg bg-slate-50 border border-slate-100">
+<span class="text-ink-muted">PING:</span>
+<span class="font-bold text-emerald-700">14ms [EAST]</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. BENTO-STYLED TELEMETRY MATRIX (2x2 Asymmetric + Sparklines) -->
+<section class="flex flex-col gap-2.5" id="telemetry">
+<div class="flex items-center justify-between px-0.5">
+<span class="font-mono text-[11px] font-bold tracking-wider text-ink-muted uppercase">// 01_TELEMETRY_INDEX</span>
+<span class="font-mono text-[10px] font-semibold text-sky-600 flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+          REALTIME
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Bento 1: Scale -->
+<div class="p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento flex flex-col justify-between group">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] font-medium text-ink-muted uppercase">PEAK_TPS</span>
+<span class="material-symbols-outlined text-[15px] text-sky-600">speed</span>
+</div>
+<div class="my-1.5">
+<span class="text-2xl font-extrabold font-mono tracking-tight text-ink-primary group-hover:text-brand-blue transition-colors">100K+</span>
+<div class="text-[11px] text-ink-secondary font-medium">Active Users Scaled</div>
+</div>
+<!-- Mini SVG Sparkline -->
+<div class="w-full h-5 mt-1 overflow-hidden opacity-75">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 16 Q 20 18, 35 10 T 65 7 T 85 3 L 100 2" fill="none" stroke="#0284C7" stroke-linecap="round" stroke-width="2.2"></path>
+</svg>
+</div>
+</div>
+<!-- Bento 2: Lead Scope (HERO GRADIENT ACCENT) -->
+<div class="p-3.5 rounded-2xl bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 text-white shadow-bento flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between relative z-10">
+<span class="font-mono text-[10px] font-bold text-sky-100 uppercase">POD_LEAD</span>
+<span class="px-1.5 py-0.5 rounded-full bg-white/20 text-[9px] font-mono font-bold">ACTIVE</span>
+</div>
+<div class="my-1.5 relative z-10">
+<span class="text-3xl font-extrabold font-mono tracking-tight text-white">9 ENG</span>
+<div class="text-[11px] text-sky-100 font-medium">Core Distributed Pod</div>
+</div>
+<div class="text-[10px] font-mono text-sky-200 pt-1 border-t border-white/20 relative z-10">
+            RFC &amp; CI Gate Owner
+          </div>
+</div>
+<!-- Bento 3: Cost Reduction -->
+<div class="p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] font-medium text-ink-muted uppercase">COST_DELIVERY</span>
+<span class="material-symbols-outlined text-[15px] text-emerald-600">trending_down</span>
+</div>
+<div class="my-1.5">
+<span class="text-2xl font-extrabold font-mono tracking-tight text-emerald-600">~25-40%</span>
+<div class="text-[11px] text-ink-secondary font-medium">Infra Spend Reduction</div>
+</div>
+<!-- Mini SVG Sparkline -->
+<div class="w-full h-5 mt-1 overflow-hidden opacity-75">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0 4 Q 25 5, 45 12 T 75 15 T 100 18" fill="none" stroke="#0D9488" stroke-linecap="round" stroke-width="2.2"></path>
+</svg>
+</div>
+</div>
+<!-- Bento 4: AI Volume -->
+<div class="p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] font-medium text-ink-muted uppercase">AI_PIPELINE</span>
+<span class="material-symbols-outlined text-[15px] text-indigo-600">neurology</span>
+</div>
+<div class="my-1.5">
+<span class="text-2xl font-extrabold font-mono tracking-tight text-ink-primary">200K+</span>
+<div class="text-[11px] text-ink-secondary font-medium">Flight Plans Ran</div>
+</div>
+<div class="font-mono text-[10px] text-slate-500 pt-1 border-t border-slate-100 flex items-center justify-between">
+<span>RECALL</span>
+<span class="font-bold text-brand-blue">94%</span>
+</div>
+</div>
+<!-- Banner Metric: Throughput -->
+<div class="p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento col-span-2 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] font-bold text-ink-muted uppercase tracking-wider">DATA_MESH_THROUGHPUT</span>
+<span class="font-mono text-[10px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded border border-sky-100">p99 &lt; 140ms</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-extrabold font-mono text-ink-primary tracking-tight">1,000,000+</span>
+<span class="font-mono text-xs text-ink-muted">events / day</span>
+</div>
+<span class="text-xs text-ink-secondary leading-normal">
+            Streaming telemetry events &amp; inventory sync via Apache Kafka with decoupled worker nodes.
+          </span>
+</div>
+</div>
+</section>
+<!-- 4. ELEVATED LEADERSHIP & GOVERNANCE CALLOUT -->
+<section class="p-4 rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 text-white shadow-bento flex flex-col gap-3 relative overflow-hidden border border-slate-800">
+<div class="absolute -top-12 -right-12 w-36 h-36 rounded-full border border-sky-500/20 pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+</div>
+<span class="font-mono text-xs font-bold uppercase tracking-wide text-white">ENGINEERING GOVERNANCE</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-sky-500/20 border border-sky-400/30 font-mono text-[10px] font-bold text-sky-300 uppercase">
+          9-ENG POD LEAD
+        </span>
+</div>
+<p class="text-xs text-slate-300 leading-relaxed relative z-10">
+        Directing a cross-functional pod of 9 backend, data, and infrastructure engineers. Spearheading zero-downtime microservice migrations, sub-second vector search fabrics, and enterprise-wide AI agent deployments compliant with aviation and enterprise SLA standards.
+      </p>
+<div class="space-y-1.5 font-mono text-[11px] text-slate-300 pt-2 border-t border-slate-800 relative z-10">
+<div class="flex items-center gap-1.5">
+<span class="text-sky-400 font-bold">&gt;</span>
+<span>Direct mentorship &amp; code ownership for 9 engineers</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-sky-400 font-bold">&gt;</span>
+<span>Architecture owner for 99.98% uptime passenger services</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-800/80 font-mono text-[10px] text-slate-400 relative z-10">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          VELOCITY: 94%
+        </span>
+<span>MTTR: &lt;14 MIN</span>
+</div>
+</section>
+<!-- 5. INTERACTIVE CAREER SPINE / TIMELINE -->
+<section class="flex flex-col gap-3" id="experience">
+<div class="flex items-center justify-between px-0.5">
+<span class="font-mono text-[11px] font-bold tracking-wider text-ink-muted uppercase">// 02_CAREER_EXECUTION_TRACE</span>
+<span class="font-mono text-[11px] text-ink-muted">2019 — PRESENT</span>
+</div>
+<!-- Glowing Vertical Connector Spine -->
+<div class="relative pl-5 flex flex-col gap-3.5">
+<!-- Rail Line with Lumina Gradient -->
+<div class="absolute left-2 top-3 bottom-3 w-[2px] bg-gradient-to-b from-sky-500 via-indigo-400 to-slate-200"></div>
+<!-- Role 1: Air India (Lead) -->
+<div class="relative flex flex-col">
+<span class="absolute -left-5 top-3.5 w-3 h-3 rounded-full bg-sky-600 ring-4 ring-sky-100 shadow-sm"></span>
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border-2 border-sky-400/80 shadow-bento p-3.5 flex flex-col gap-2">
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-2">
+<span class="font-bold text-ink-primary text-sm">Air India</span>
+<span class="font-mono text-[10px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full border border-sky-200">2023 — PRESENT</span>
+</div>
+<span class="font-mono text-xs text-brand-blue font-bold">Lead Software Engineer (Pod Lead)</span>
+<span class="font-mono text-[10px] text-slate-500">SCOPE: 9 DIRECT REPORTS • GURGAON, IN</span>
+</div>
+<button class="flex items-center justify-between w-full py-1 text-left font-mono text-[11px] font-semibold text-sky-700 hover:text-brand-blue transition" onclick="toggleDetails('exp-1')">
+<span class="flex items-center gap-1" id="exp-1-label">[+] VIEW ARCHITECTURE METRICS</span>
+<span class="material-symbols-outlined text-[16px] text-sky-600" id="exp-1-icon">unfold_more</span>
+</button>
+<div class="hidden flex-col gap-2 pt-2 border-t border-slate-100 bg-slate-50/90 rounded-xl p-2.5 text-xs text-ink-secondary" id="exp-1">
+<div class="flex items-start gap-2">
+<span class="text-sky-600 font-bold font-mono">›</span>
+<span>Direct architectural ownership of 9-engineer pod delivering core high-concurrency services on AWS ECS/EKS.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-sky-600 font-bold font-mono">›</span>
+<span>Architected next-generation cargo/scheduling services handling 200K+ recurring mission-critical calculations.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-sky-600 font-bold font-mono">›</span>
+<span>Integrated internal LLM evaluation frameworks for operational document classification, saving 120 eng-hours monthly.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-sky-600 font-bold font-mono">›</span>
+<span>Slashed cloud egress spend by 38% via Redis sharding and asynchronous event-driven worker queues.</span>
+</div>
+</div>
+<!-- Tech Tags -->
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">FastAPI</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Node.js</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">AWS ECS</span>
+<span class="px-2 py-0.5 rounded bg-sky-50 border border-sky-200 font-mono text-[10px] text-sky-800 font-semibold">LLM Orchestration</span>
+</div>
+</div>
+</div>
+<!-- Role 2: UniCommerce -->
+<div class="relative flex flex-col">
+<span class="absolute -left-5 top-3.5 w-3 h-3 rounded-full bg-slate-300 ring-4 ring-white shadow-sm"></span>
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-3.5 flex flex-col gap-2">
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-2">
+<span class="font-bold text-ink-primary text-sm">UniCommerce</span>
+<span class="font-mono text-[10px] font-medium text-ink-muted bg-slate-100 px-2 py-0.5 rounded">2022 — 2023</span>
+</div>
+<span class="font-mono text-xs text-ink-secondary font-semibold">Senior Software Engineer</span>
+</div>
+<button class="flex items-center justify-between w-full py-1 text-left font-mono text-[11px] font-semibold text-slate-600 hover:text-brand-blue transition" onclick="toggleDetails('exp-2')">
+<span class="flex items-center gap-1" id="exp-2-label">[+] VIEW WAREHOUSE TELEMETRY</span>
+<span class="material-symbols-outlined text-[16px] text-sky-600" id="exp-2-icon">unfold_more</span>
+</button>
+<div class="hidden flex-col gap-2 pt-2 border-t border-slate-100 bg-slate-50/90 rounded-xl p-2.5 text-xs text-ink-secondary" id="exp-2">
+<div class="flex items-start gap-2">
+<span class="text-sky-600 font-bold font-mono">›</span>
+<span>Engineered high-concurrency order dispatch engine processing 10,000+ operations/sec during peak festive surges.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-sky-600 font-bold font-mono">›</span>
+<span>Restructured multi-tenant database partitions, eliminating locking contention and maintaining p99 under 45ms.</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Java</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">PostgreSQL</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">RabbitMQ</span>
+</div>
+</div>
+</div>
+<!-- Role 3: Edfora / FIITJEE -->
+<div class="relative flex flex-col">
+<span class="absolute -left-5 top-3.5 w-3 h-3 rounded-full bg-slate-300 ring-4 ring-white shadow-sm"></span>
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-3.5 flex flex-col gap-2">
+<div class="flex flex-col">
+<div class="flex items-center justify-between gap-2">
+<span class="font-bold text-ink-primary text-sm">Edfora / FIITJEE</span>
+<span class="font-mono text-[10px] font-medium text-ink-muted bg-slate-100 px-2 py-0.5 rounded">2020 — 2022</span>
+</div>
+<span class="font-mono text-xs text-ink-secondary font-semibold">Software Engineer</span>
+</div>
+<button class="flex items-center justify-between w-full py-1 text-left font-mono text-[11px] font-semibold text-slate-600 hover:text-brand-blue transition" onclick="toggleDetails('exp-3')">
+<span class="flex items-center gap-1" id="exp-3-label">[+] VIEW SCALING IMPACT</span>
+<span class="material-symbols-outlined text-[16px] text-sky-600" id="exp-3-icon">unfold_more</span>
+</button>
+<div class="hidden flex-col gap-2 pt-2 border-t border-slate-100 bg-slate-50/90 rounded-xl p-2.5 text-xs text-ink-secondary" id="exp-3">
+<div class="flex items-start gap-2">
+<span class="text-sky-600 font-bold font-mono">›</span>
+<span>Constructed real-time assessment engine serving 50,000+ concurrent test-takers across India with zero state loss.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="text-sky-600 font-bold font-mono">›</span>
+<span>Migrated monolith components to Go microservices, improving deployment frequency by 3x.</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1 pt-1">
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Go</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Node.js</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Elasticsearch</span>
+</div>
+</div>
+</div>
+<!-- Role 4: Wingify -->
+<div class="relative flex flex-col">
+<span class="absolute -left-5 top-3.5 w-3 h-3 rounded-full bg-slate-300 ring-4 ring-white shadow-sm"></span>
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-3.5 flex flex-col gap-1.5">
+<div class="flex items-center justify-between gap-2">
+<span class="font-bold text-ink-primary text-sm">Wingify (VWO)</span>
+<span class="font-mono text-[10px] font-medium text-ink-muted bg-slate-100 px-2 py-0.5 rounded">2019 — 2020</span>
+</div>
+<span class="font-mono text-xs text-ink-secondary font-medium">Software Engineering Intern</span>
+<p class="text-xs text-ink-secondary leading-relaxed pt-0.5">
+              Built telemetry scrapers and automated edge regression harnesses guaranteeing client SDK bundles remained strictly under 25KB minified.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. APPLIED AI ARCHITECTURAL FLOW DIAGRAMS & CASE STUDIES -->
+<section class="flex flex-col gap-3" id="systems-ai">
+<div class="flex items-center justify-between px-0.5">
+<span class="font-mono text-[11px] font-bold tracking-wider text-ink-muted uppercase">// 03_APPLIED_AGENTIC_SYSTEMS</span>
+<span class="font-mono text-[10px] font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded border border-sky-200">R&amp;D + PROD</span>
+</div>
+<!-- Flagship Blueprint Card -->
+<div class="rounded-3xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-bento p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] font-bold text-sky-600 uppercase tracking-wide">BLUEPRINT_01 // AGENTIC</span>
+<span class="font-mono text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">SUB-250MS P99</span>
+</div>
+<div>
+<h2 class="text-base font-bold text-ink-primary leading-snug">Agentic Profile &amp; Candidate Synthesizer</h2>
+<p class="text-xs text-ink-secondary leading-relaxed mt-1">
+            Autonomous multi-step evaluator matching incoming technical profiles against complex job schemas using deterministic grading graphs and vector similarity thresholds.
+          </p>
+</div>
+<!-- HIGH-CRAFT MOBILE SYSTEM FLOW SCHEMATIC (Dark Bento Container) -->
+<div class="bg-slate-900 rounded-2xl p-3.5 text-white shadow-inner flex flex-col gap-2 border border-slate-800 font-mono">
+<div class="flex items-center justify-between text-[10px] text-slate-400 border-b border-slate-800 pb-1.5">
+<span class="text-sky-400 font-semibold uppercase">TOPOLOGY MAP</span>
+<span class="text-emerald-400 font-medium">FLOW: DETERMINISTIC</span>
+</div>
+<div class="flex flex-col items-center gap-1.5 py-1">
+<!-- Node 1 -->
+<div class="w-full py-2 px-3 bg-slate-800/90 border border-slate-700 rounded-xl flex items-center justify-between shadow-sm">
+<span class="text-xs font-semibold text-white">[ Raw Payload ]</span>
+<span class="text-[10px] text-sky-300 bg-sky-950 px-2 py-0.5 rounded border border-sky-800">JSON / PDF</span>
+</div>
+<span class="material-symbols-outlined text-[15px] text-sky-400">arrow_downward</span>
+<!-- Node 2 -->
+<div class="w-full py-2 px-3 bg-slate-800/90 border border-slate-700 rounded-xl flex items-center justify-between shadow-sm">
+<span class="text-xs font-semibold text-white">[ Vector Index ]</span>
+<span class="text-[10px] text-sky-300 bg-sky-950 px-2 py-0.5 rounded border border-sky-800">pgvector / 1536d</span>
+</div>
+<span class="material-symbols-outlined text-[15px] text-sky-400">arrow_downward</span>
+<!-- Node 3 (Hero Glow Agent) -->
+<div class="w-full py-2 px-3 bg-gradient-to-r from-sky-900/90 to-blue-900 border-2 border-sky-400 rounded-xl flex items-center justify-between shadow-md shadow-sky-500/20">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+<span class="text-xs font-bold text-white">[ Agent Evaluator ]</span>
+</div>
+<span class="text-[10px] font-bold text-sky-100 bg-sky-600 px-2 py-0.5 rounded">LangGraph Chain</span>
+</div>
+<span class="material-symbols-outlined text-[15px] text-teal-400">arrow_downward</span>
+<!-- Node 4 -->
+<div class="w-full py-2 px-3 bg-slate-800/90 border border-teal-500/80 rounded-xl flex items-center justify-between shadow-sm">
+<span class="text-xs font-semibold text-teal-300">[ Match Score Matrix ]</span>
+<span class="text-[10px] font-bold text-teal-300 bg-teal-950 px-2 py-0.5 rounded border border-teal-700">SCORE &gt;= 0.88</span>
+</div>
+</div>
+</div>
+<!-- Outcome Metric Card -->
+<div class="p-3 rounded-xl bg-gradient-to-br from-sky-50 to-indigo-50/60 border border-sky-200 flex items-center justify-between">
+<div>
+<span class="font-mono text-[10px] font-bold text-sky-800 uppercase">OUTCOME_METRIC</span>
+<div class="font-mono text-base font-extrabold text-brand-blue">+38% PRECISION</div>
+</div>
+<span class="font-mono text-[11px] text-sky-900 font-medium text-right">Sub-250ms cached<br/>vector re-ranking</span>
+</div>
+<!-- Tech stack chips -->
+<div class="flex flex-wrap gap-1.5 pt-0.5">
+<span class="px-2 py-0.5 rounded-lg bg-slate-100 font-mono text-[10px] text-slate-700 font-medium">LangChain</span>
+<span class="px-2 py-0.5 rounded-lg bg-slate-100 font-mono text-[10px] text-slate-700 font-medium">FastAPI</span>
+<span class="px-2 py-0.5 rounded-lg bg-slate-100 font-mono text-[10px] text-slate-700 font-medium">pgvector</span>
+<span class="px-2 py-0.5 rounded-lg bg-slate-100 font-mono text-[10px] text-slate-700 font-medium">Redis</span>
+</div>
+</div>
+<!-- Project 2: Enterprise Spec RAG -->
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-3.5 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-bold text-sm text-ink-primary">Enterprise Spec RAG Pipeline</span>
+<span class="font-mono text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">94% ACCURACY</span>
+</div>
+<p class="text-xs text-ink-secondary leading-relaxed">
+          Hybrid BM25 + dense embedding hybrid search retrieval across 50,000+ flight compliance technical manuals with verifiable citations.
+        </p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Qdrant</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">LlamaIndex</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Claude 3.5</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Python 3.11</span>
+</div>
+</div>
+<!-- Project 3: Resume Telemetry Analyzer -->
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-3.5 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-bold text-sm text-ink-primary">Resume Telemetry Analyzer</span>
+<span class="font-mono text-[10px] font-semibold text-ink-muted bg-slate-100 px-2 py-0.5 rounded">OPEN SOURCE</span>
+</div>
+<p class="text-xs text-ink-secondary leading-relaxed">
+          Deterministic entity extractor and scoring model parsing engineering portfolios with zero hallucinations via constrained structured outputs.
+        </p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Instructor</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Pydantic</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 font-mono text-[10px] text-slate-700">Docker</span>
+</div>
+</div>
+</section>
+<!-- 7. SKILLS & ARSENAL (Bento-grouped Technical Tags) -->
+<section class="flex flex-col gap-2.5" id="skills">
+<div class="flex items-center justify-between px-0.5">
+<span class="font-mono text-[11px] font-bold tracking-wider text-ink-muted uppercase">// 04_CAPABILITIES_INVENTORY</span>
+<span class="font-mono text-[11px] text-ink-muted">5 BENTO BLOCKS</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- AI / LLM (Hero Bento Tag Block) -->
+<div class="rounded-2xl bg-gradient-to-br from-sky-50/90 via-white to-indigo-50/40 border-2 border-sky-400 shadow-bento p-3.5 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[10px] font-bold text-sky-900 uppercase tracking-wide">[ AI / LLM: AGENTIC &amp; RAG ]</span>
+<span class="font-mono text-[9px] font-bold text-sky-700 bg-sky-100 px-2 py-0.5 rounded-full border border-sky-200">CORE FOCUS</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-white border border-sky-300 font-mono text-[11px] font-bold text-sky-950 shadow-xs">LangChain</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-sky-300 font-mono text-[11px] font-bold text-sky-950 shadow-xs">LangGraph</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-sky-300 font-mono text-[11px] font-bold text-sky-950 shadow-xs">pgvector</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-sky-200 font-mono text-[11px] font-medium text-slate-800">Ollama / vLLM</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-sky-300 font-mono text-[11px] font-bold text-sky-950 shadow-xs">RAG Architecture</span>
+<span class="px-2.5 py-1 rounded-lg bg-white border border-sky-200 font-mono text-[11px] font-medium text-slate-800">Function Calling</span>
+</div>
+</div>
+<!-- Languages -->
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-3.5 flex flex-col gap-2">
+<span class="font-mono text-[10px] font-bold text-ink-muted uppercase tracking-wide">[ CORE_LANGUAGES ]</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">Go (Golang)</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">Python</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">TypeScript</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">SQL</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">C++</span>
+</div>
+</div>
+<!-- Backend & Distributed -->
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-3.5 flex flex-col gap-2">
+<span class="font-mono text-[10px] font-bold text-ink-muted uppercase tracking-wide">[ BACKEND &amp; DISTRIBUTED ]</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">FastAPI</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">gRPC</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">PostgreSQL</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">Redis Cluster</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">Kafka</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">RabbitMQ</span>
+</div>
+</div>
+<!-- Cloud / Infra -->
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-3.5 flex flex-col gap-2">
+<span class="font-mono text-[10px] font-bold text-ink-muted uppercase tracking-wide">[ CLOUD &amp; DEVOPS ]</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">Docker</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">Kubernetes</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">AWS (ECS, S3, RDS)</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">Terraform</span>
+<span class="px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 font-mono text-[11px] text-slate-700 font-medium">Prometheus</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. NOW & ACADEMIC REGISTRY -->
+<section class="grid grid-cols-1 gap-2.5">
+<!-- Active Probe (Now) -->
+<div class="rounded-2xl bg-gradient-to-br from-sky-50/60 via-white to-white border border-slate-200/80 shadow-bento p-4 flex flex-col gap-1.5">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-sky-600 animate-pulse"></span>
+<span class="font-mono text-[10px] font-bold text-sky-800 uppercase tracking-wider">CURRENT ACTIVE PROBE (NOW)</span>
+</div>
+<span class="font-mono text-[10px] text-slate-400">LAB_BRANCH</span>
+</div>
+<p class="text-xs text-ink-secondary leading-relaxed pt-1">
+          Investigating hierarchical consensus patterns in multi-agent environments to minimize hallucination rates during unbounded planning loops.
+        </p>
+</div>
+<!-- Academic Registry -->
+<div class="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-bento p-4 flex flex-col gap-1">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2">
+<span class="font-mono text-[10px] font-bold text-ink-muted uppercase tracking-wider">// ACADEMIC_REGISTRY</span>
+<span class="font-mono text-[10px] font-semibold text-brand-blue">2016 — 2020</span>
+</div>
+<div class="mt-1">
+<div class="font-bold text-sm text-ink-primary">Delhi Technological University (DTU)</div>
+<div class="font-mono text-xs text-brand-blue font-semibold">B.Tech in Information Technology</div>
+</div>
+<span class="text-xs text-ink-secondary pt-0.5">Formerly DCE. Distributed systems, algorithms &amp; concurrency core.</span>
+</div>
+</section>
+<!-- 9. INTERACTIVE CONTACT & SIGNAL DISPATCH -->
+<section class="flex flex-col gap-3" id="contact-module">
+<div class="flex items-center justify-between px-0.5">
+<span class="font-mono text-[11px] font-bold tracking-wider text-ink-muted uppercase">// 05_SIGNAL_DISPATCH</span>
+<span class="font-mono text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">CHANNEL: OPEN</span>
+</div>
+<div class="rounded-3xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-bento p-4 sm:p-5 flex flex-col gap-3.5">
+<form class="flex flex-col gap-3" id="signal-form" onsubmit="event.preventDefault(); handleTransmit();">
+<div class="flex flex-col gap-1">
+<label class="font-mono text-[11px] font-semibold text-slate-700 uppercase" for="contact-name">TRANSMITTER_NAME</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl text-ink-primary text-xs px-3.5 py-2.5 focus:outline-none focus:border-brand-blue focus:bg-white focus:ring-2 focus:ring-brand-blue/20 transition" id="contact-name" placeholder="Engineering Director / Recruiter" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-mono text-[11px] font-semibold text-slate-700 uppercase" for="contact-email">RETURN_COORDINATE (EMAIL)</label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl text-ink-primary text-xs px-3.5 py-2.5 focus:outline-none focus:border-brand-blue focus:bg-white focus:ring-2 focus:ring-brand-blue/20 transition" id="contact-email" placeholder="colleague@domain.com" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-mono text-[11px] font-semibold text-slate-700 uppercase" for="contact-msg">PAYLOAD_SPECIFICATION</label>
+<textarea class="w-full bg-slate-50 border border-slate-200 rounded-xl text-ink-primary text-xs px-3.5 py-2.5 focus:outline-none focus:border-brand-blue focus:bg-white focus:ring-2 focus:ring-brand-blue/20 transition resize-none" id="contact-msg" placeholder="Outline role parameters, stack requirements, or architecture challenge..." required="" rows="3"></textarea>
+</div>
+<button class="w-full py-3 rounded-xl bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 text-white font-mono text-xs font-bold tracking-wider uppercase shadow-sm hover:opacity-95 active:scale-[0.98] transition flex items-center justify-center gap-2" id="btn-submit" type="submit">
+<span class="material-symbols-outlined text-[17px]">send</span>
+<span>[ DISPATCH SIGNAL ]</span>
+</button>
+<div class="hidden p-2.5 rounded-xl font-mono text-xs text-center border" id="form-status"></div>
+</form>
+<!-- Direct Email Pill Box with Copy Action -->
+<div class="pt-2 border-t border-slate-100 flex flex-col gap-2">
+<div class="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-[16px] text-sky-600">alternate_email</span>
+<span class="font-mono text-xs font-bold text-ink-primary truncate">harshitmeena.dev@gmail.com</span>
+</div>
+<button class="font-mono text-[11px] font-bold text-sky-700 uppercase hover:underline ml-2 flex items-center gap-1" onclick="navigator.clipboard.writeText('harshitmeena.dev@gmail.com'); showToast(event);">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>[COPY]</span>
+</button>
+</div>
+<!-- Secured Phone Reveal -->
+<div class="flex flex-col items-center bg-slate-50 rounded-xl border border-slate-200 p-2.5">
+<div class="w-full flex items-center justify-between" id="phone-container">
+<span class="font-mono text-[11px] text-ink-muted">VOICE_CIRCUIT: SECURED</span>
+<button class="font-mono text-[11px] font-bold text-sky-700 uppercase hover:underline flex items-center gap-1" id="phone-btn" onclick="revealPhone()">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>[ REVEAL PHONE ]</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. MOBILE FOOTER -->
+<footer class="w-full pt-4 pb-4 flex flex-col gap-3 border-t border-slate-200/80 text-ink-muted">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-lg bg-slate-900 text-white font-bold text-[10px] flex items-center justify-center">
+            HM
+          </div>
+<span class="font-mono text-[11px] font-bold tracking-wide text-ink-primary">HARSHIT MEENA // ARCH</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-mono text-[10px] font-semibold text-emerald-800">OPERATIONAL</span>
+</div>
+</div>
+<div class="flex items-center justify-between font-mono text-[11px] pt-1">
+<a class="hover:text-brand-blue flex items-center gap-1 text-slate-600" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[14px]">code</span>
+<span>GITHUB</span>
+</a>
+<a class="hover:text-brand-blue flex items-center gap-1 text-slate-600" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[14px]">hub</span>
+<span>LINKEDIN</span>
+</a>
+<a class="hover:text-brand-blue flex items-center gap-1 text-sky-700 font-bold" href="#contact-module">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span>[CONTACT]</span>
+</a>
+</div>
+<div class="text-[10px] font-mono text-slate-400 text-center pt-2 border-t border-slate-100">
+        PRECISION ARCHITECTURE // HIGH-THROUGHPUT RUNTIME
+      </div>
+</footer>
+</main>
+<!-- 11. MOBILE BOTTOM NAVIGATION BAR (Crisp Lumina Glass) -->
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-white/90 backdrop-blur-xl border-t border-slate-200/80 shadow-[0_-4px_16px_rgba(15,23,42,0.05)]">
+<div class="flex justify-around items-center h-14 max-w-md mx-auto px-2">
+<a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 text-brand-blue font-bold" href="#overview">
+<span class="material-symbols-outlined text-[20px]">dataset</span>
+<span class="font-mono text-[10px] tracking-tighter mt-0.5">SYS</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-12 text-slate-500 hover:text-ink-primary transition" href="#telemetry">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span class="font-mono text-[10px] tracking-tighter mt-0.5">METRICS</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-12 text-slate-500 hover:text-ink-primary transition" href="#experience">
+<span class="material-symbols-outlined text-[20px]">timeline</span>
+<span class="font-mono text-[10px] tracking-tighter mt-0.5">TRACK</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-12 text-slate-500 hover:text-ink-primary transition" href="#systems-ai">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+<span class="font-mono text-[10px] tracking-tighter mt-0.5">AGENTS</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-12 text-slate-500 hover:text-ink-primary transition" href="#contact-module">
+<span class="material-symbols-outlined text-[20px]">cell_tower</span>
+<span class="font-mono text-[10px] tracking-tighter mt-0.5">DISPATCH</span>
+</a>
+</div>
+</nav>
+<!-- INTERACTIVE LOGIC -->
+<script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      const label = document.getElementById(id + '-label');
+      const icon = document.getElementById(id + '-icon');
+      if (!el) return;
+
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        el.classList.add('flex');
+        if (label) label.textContent = '[-] COLLAPSE METRICS';
+        if (icon) icon.textContent = 'unfold_less';
+      } else {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+        if (label) label.textContent = '[+] VIEW ARCHITECTURE METRICS';
+        if (icon) icon.textContent = 'unfold_more';
+      }
+    }
+
+    function handleTransmit() {
+      const status = document.getElementById('form-status');
+      const btn = document.getElementById('btn-submit');
+      if (!status || !btn) return;
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="animate-spin material-symbols-outlined text-[17px]">sync</span><span>DISPATCHING...</span>';
+
+      setTimeout(() => {
+        status.classList.remove('hidden');
+        status.className = 'p-2.5 rounded-xl font-mono text-xs text-center bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold';
+        status.innerHTML = 'STATUS: 200 OK // SIGNAL LOGGED TO INBOX';
+        btn.innerHTML = '<span class="material-symbols-outlined text-[17px]">done</span><span>SIGNAL TRANSMITTED</span>';
+        btn.className = 'w-full py-3 rounded-xl bg-slate-100 text-slate-600 border border-slate-200 font-mono text-xs font-semibold tracking-wider uppercase transition flex items-center justify-center gap-2';
+      }, 650);
+    }
+
+    function revealPhone() {
+      const container = document.getElementById('phone-container');
+      if (!container) return;
+      container.innerHTML = `
+        <span class="font-mono text-[10px] font-bold text-ink-muted uppercase">DIRECT_DIAL</span>
+        <a href="tel:+919871789658" class="font-mono text-xs text-brand-blue font-bold hover:underline tracking-wider">+91 98717 89658 [CALL]</a>
+      `;
+    }
+
+    function showToast(e) {
+      const target = e.currentTarget;
+      const originalHtml = target.innerHTML;
+      target.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span><span>[COPIED!]</span>';
+      setTimeout(() => {
+        target.innerHTML = originalHtml;
+      }, 1500);
+    }
+  </script>
+</body></html>

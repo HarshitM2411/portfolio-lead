@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Harshit Meena — Lead Software Engineer &amp; Applied AI Architect</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Subtle high-craft linear grid */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(203, 213, 225, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.25) 1px, transparent 1px);
+}
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 60%);
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+.animate-aurora {
+  animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes flow-dash {
+  to { stroke-dashoffset: -20; }
+}
+.animate-flow-dash {
+  stroke-dasharray: 5, 5;
+  animation: flow-dash 1.2s linear infinite;
+}
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        canvas: "#F8FAFC",
+        "canvas-alt": "#F1F5F9",
+        surface: "#FFFFFF",
+        ink: {
+          primary: "#090D16",
+          secondary: "#475569",
+          muted: "#64748B",
+          faint: "#94A3B8"
+        },
+        brand: {
+          blue: "#2563EB",
+          cyan: "#0284C7",
+          teal: "#0D9488",
+          indigo: "#4F46E5",
+          violet: "#7C3AED"
+        }
+      },
+      fontFamily: {
+        sans: ["Geist", "Inter", "-apple-system", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "SFMono-Regular", "monospace"]
+      },
+      boxShadow: {
+        glow: "0 0 40px -10px rgba(56, 189, 248, 0.3)",
+        glass: "0 8px 32px 0 rgba(15, 23, 42, 0.06), 0 1px 2px 0 rgba(15, 23, 42, 0.04)",
+        bento: "0 2px 8px -2px rgba(15, 23, 42, 0.04), 0 12px 24px -6px rgba(15, 23, 42, 0.06)",
+        "bento-hover": "0 8px 30px -4px rgba(14, 165, 233, 0.12), 0 20px 35px -8px rgba(15, 23, 42, 0.08)"
+      }
+    }
+  }
+}
+</script>
+</head>
+<body class="bg-[#FAFAFD] font-sans text-ink-primary antialiased selection:bg-sky-100 selection:text-sky-900 relative min-h-screen overflow-x-hidden">
+<!-- ========================================================================= -->
+<!-- AMBIENT AURORA MESH BACKGROUND (Vercel / Linear Aesthetic)               -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-tr from-cyan-200/40 via-sky-300/30 to-indigo-200/35 rounded-full blur-[110px] animate-aurora"></div>
+<div class="absolute top-[40%] -left-[100px] w-[500px] h-[500px] bg-gradient-to-br from-indigo-200/20 to-sky-200/25 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute top-[75%] -right-[150px] w-[600px] h-[600px] bg-gradient-to-bl from-teal-200/25 to-blue-200/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute inset-0 bg-grid-pattern opacity-60"></div>
+</div>
+<!-- ========================================================================= -->
+<!-- 00. FLOATING GLASS HEADER / NAVIGATION                                    -->
+<!-- ========================================================================= -->
+<header class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6 max-w-7xl mx-auto">
+<div class="bg-white/80 backdrop-blur-xl border border-slate-200/80 rounded-2xl px-4 sm:px-6 py-2.5 shadow-glass flex items-center justify-between transition-all duration-300">
+<!-- Identity Brand Cluster -->
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-3 group" href="#overview">
+<div class="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-slate-900 via-slate-800 to-sky-700 flex items-center justify-center text-white font-bold text-xs tracking-tight shadow-md group-hover:scale-105 group-hover:shadow-sky-500/20 transition-all duration-200">
+          HM
+          <div class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white"></div>
+</div>
+<div>
+<div class="font-bold text-sm tracking-tight text-ink-primary group-hover:text-brand-blue transition-colors flex items-center gap-1.5">
+            Harshit Meena
+          </div>
+<div class="font-mono text-[10px] text-ink-faint leading-none">LEAD_ENG // DTU_2020</div>
+</div>
+</a>
+<!-- Status Pill -->
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 bg-emerald-50/80 border border-emerald-200/70 rounded-full ml-3">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="font-mono text-[11px] font-semibold text-emerald-800">Open for Lead / Staff AI roles • Q2 2025</span>
+</div>
+</div>
+<!-- Navigation Pills -->
+<nav class="hidden md:flex items-center gap-1 bg-slate-100/80 p-1 rounded-xl border border-slate-200/60 font-mono text-xs text-ink-secondary">
+<a class="px-3 py-1.5 rounded-lg text-ink-primary font-semibold hover:bg-white hover:shadow-xs transition-all" href="#overview">01_OVERVIEW</a>
+<a class="px-3 py-1.5 rounded-lg hover:text-ink-primary hover:bg-white/80 transition-all" href="#experience">02_EXPERIENCE</a>
+<a class="px-3 py-1.5 rounded-lg hover:text-ink-primary hover:bg-white/80 transition-all" href="#systems-ai">03_SYSTEMS_AI</a>
+<a class="px-3 py-1.5 rounded-lg hover:text-ink-primary hover:bg-white/80 transition-all" href="#skills">04_SKILLS</a>
+<a class="px-3 py-1.5 rounded-lg hover:text-ink-primary hover:bg-white/80 transition-all" href="#contact-module">05_CONTACT</a>
+</nav>
+<!-- Header Glass Action Bay -->
+<div class="flex items-center gap-2 sm:gap-2.5">
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200/90 text-ink-secondary hover:text-ink-primary hover:border-slate-300 font-mono text-xs transition-all shadow-xs" href="https://github.com" rel="noopener" target="_blank">
+<span class="font-semibold">GitHub</span>
+<span class="material-symbols-outlined text-[13px] text-slate-400">arrow_outward</span>
+</a>
+<a class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200/90 text-ink-secondary hover:text-ink-primary hover:border-slate-300 font-mono text-xs transition-all shadow-xs" href="https://linkedin.com" rel="noopener" target="_blank">
+<span class="font-semibold">LinkedIn</span>
+<span class="material-symbols-outlined text-[13px] text-slate-400">arrow_outward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-mono text-xs font-semibold tracking-wide transition-all shadow-md shadow-slate-900/10 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]" href="#contact-module">
+<span class="material-symbols-outlined text-[15px] text-sky-400">download</span>
+<span>RESUME (PDF)</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full relative z-10 pt-28 pb-16">
+<!-- ========================================================================= -->
+<!-- 01. HERO BENTO GRID & DYNAMIC TELEMETRY RADAR                             -->
+<!-- ========================================================================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-14" id="overview">
+<!-- System Telemetry Preheader -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-6 font-mono text-xs text-ink-muted border-b border-slate-200/70 pb-3">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+<span class="text-ink-primary font-semibold tracking-wider">[NODE_001 :: DISTRIBUTED_SYS → AGENTIC_AI]</span>
+</div>
+<div class="flex items-center gap-3 sm:gap-4 flex-wrap text-slate-500">
+<span>LOC: +28.6139° N, 77.2090° E</span>
+<span class="hidden sm:inline opacity-40">•</span>
+<span class="hidden sm:inline">ALUM: DTU_IT_2020</span>
+<span class="opacity-40">•</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          ENV: PROD_READY
+        </span>
+</div>
+</div>
+<!-- Main Hero Split Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left Hero Card (Linear / Apple Editorial Style) -->
+<div class="lg:col-span-8 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-7 sm:p-10 shadow-bento relative overflow-hidden group">
+<!-- Ambient corner glow -->
+<div class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-bl from-sky-400/15 via-indigo-400/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
+<div class="space-y-6 relative z-10">
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[14px] text-sky-400">terminal</span>
+              Lead Software Engineer
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-sky-800 font-mono text-xs font-semibold">
+<span class="material-symbols-outlined text-[14px] text-sky-600">hub</span>
+              Applied AI Architect
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 font-mono text-xs">
+              6+ YRS EXP
+            </span>
+</div>
+<div class="space-y-3">
+<h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-ink-primary leading-[1.08] font-sans">
+              Harshit Meena
+            </h1>
+<p class="text-lg sm:text-xl text-ink-secondary max-w-2xl leading-relaxed font-normal">
+              Lead Software Engineer &amp; Applied AI Architect. <span class="text-ink-primary font-semibold underline decoration-sky-300 underline-offset-4 decoration-2">6+ years</span> architecting fault-tolerant distributed platforms and production applied AI/LLM agentic workflows at enterprise scale.
+            </p>
+</div>
+<!-- Dual Call to Action Bay -->
+<div class="pt-2 flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 text-white font-mono text-xs font-bold uppercase tracking-wider hover:opacity-95 hover:shadow-lg hover:shadow-sky-500/25 active:scale-[0.98] transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>[ VIEW RESUME (PDF) ]</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200/80 border border-slate-300/80 text-ink-primary font-mono text-xs uppercase tracking-wider font-semibold hover:border-slate-400 transition-all" href="#contact-module">
+<span class="material-symbols-outlined text-[16px] text-slate-600">terminal</span>
+<span>[ INITIATE TRANSMISSION ]</span>
+</a>
+<div class="flex items-center gap-1.5 p-1 bg-slate-100/90 rounded-xl border border-slate-200">
+<a class="px-3 py-2 rounded-lg bg-white font-mono text-xs text-ink-secondary hover:text-ink-primary transition-all flex items-center gap-1 shadow-xs" href="https://github.com" rel="noopener" target="_blank">
+<span>GITHUB</span>
+<span class="material-symbols-outlined text-[13px] text-slate-400">arrow_outward</span>
+</a>
+<a class="px-3 py-2 rounded-lg bg-white font-mono text-xs text-ink-secondary hover:text-ink-primary transition-all flex items-center gap-1 shadow-xs" href="https://linkedin.com" rel="noopener" target="_blank">
+<span>LINKEDIN</span>
+<span class="material-symbols-outlined text-[13px] text-slate-400">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Quick Telemetry Badge Strip -->
+<div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500">
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
+              9-Engineer Pod Lead @ Air India
+            </span>
+<span class="hidden sm:inline text-slate-300">•</span>
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              99.98% High-TPS Microservices
+            </span>
+<span class="hidden sm:inline text-slate-300">•</span>
+<span class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+              Multi-Agent RAG Orchestration
+            </span>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive System Telemetry Radar & Live Stats -->
+<div class="lg:col-span-4 space-y-4">
+<!-- Live Node Radar Box -->
+<div class="bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 shadow-bento relative overflow-hidden">
+<div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-600"></span>
+</span>
+<span class="font-mono text-xs font-bold text-ink-primary uppercase tracking-wider">OPERATIONAL_RADAR</span>
+</div>
+<span class="font-mono text-[11px] font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-md border border-sky-200">v3.4.1 PROD</span>
+</div>
+<div class="space-y-3 font-mono text-xs">
+<div class="flex justify-between items-center p-2 rounded-xl bg-slate-50 border border-slate-100">
+<span class="text-ink-muted">ACTIVE_POD_SCOPE:</span>
+<span class="text-ink-primary font-bold bg-white px-2 py-0.5 rounded-md border border-slate-200 shadow-xs">9 ENGINEERS</span>
+</div>
+<div class="flex justify-between items-center p-2 rounded-xl bg-slate-50 border border-slate-100">
+<span class="text-ink-muted">CORE_FOCUS:</span>
+<span class="text-ink-primary font-bold">DISTRIBUTED + AGENTS</span>
+</div>
+<div class="flex justify-between items-center p-2 rounded-xl bg-slate-50 border border-slate-100">
+<span class="text-ink-muted">CLUSTER_HEALTH:</span>
+<span class="text-emerald-700 font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                OPTIMAL (99.98%)
+              </span>
+</div>
+<div class="flex justify-between items-center p-2 rounded-xl bg-slate-50 border border-slate-100">
+<span class="text-ink-muted">CURRENT_NODE:</span>
+<span class="text-brand-blue font-bold">AIR INDIA (LEAD)</span>
+</div>
+<div class="flex justify-between items-center p-2 rounded-xl bg-slate-50 border border-slate-100">
+<span class="text-ink-muted">RUNTIME_PING:</span>
+<span class="text-slate-800 font-bold font-mono">14ms [EAST_REGION]</span>
+</div>
+</div>
+<!-- Progress / Health bar -->
+<div class="mt-4 pt-3 border-t border-slate-100">
+<div class="flex items-center justify-between font-mono text-[11px] text-slate-500 mb-1.5">
+<span>POD CAPACITY &amp; STABILITY</span>
+<span class="text-brand-blue font-bold">98.4%</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden p-0.5">
+<div class="bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-600 h-full w-[94%] rounded-full transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+<!-- Academic & Base Quick Card -->
+<div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-5 shadow-bento relative overflow-hidden">
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-sky-500/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
+<span>DTU ALUMNUS // 2016-2020</span>
+<span class="material-symbols-outlined text-[16px] text-sky-400">school</span>
+</div>
+<div class="font-bold text-sm text-slate-100 mb-1">Delhi Technological University (DTU)</div>
+<div class="font-mono text-xs text-sky-300 mb-2">B.Tech in Information Technology</div>
+<div class="text-xs text-slate-400 leading-relaxed">
+            Formerly DCE. Strong foundations in distributed computing, concurrency, systems architecture &amp; algorithms.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 02. ASYMMETRIC BENTO GRID TELEMETRY & IMPACT METRICS                      -->
+<!-- ========================================================================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="telemetry">
+<div class="flex items-center justify-between mb-5 font-mono text-xs text-slate-500 uppercase tracking-wider">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-sky-600">monitoring</span>
+<span class="font-semibold text-ink-primary">// AGGREGATED RUNTIME TELEMETRY &amp; PROD IMPACT</span>
+</div>
+<span class="hidden sm:inline text-[11px] text-slate-400">AUDITED PRODUCTION METRICS</span>
+</div>
+<!-- Modern Asymmetric Bento Layout -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
+<!-- Bento Item 1: Concurrent Scale (4 cols) -->
+<div class="lg:col-span-4 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 shadow-bento hover:shadow-bento-hover hover:border-sky-300 transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-semibold">CONCURRENT SCALE</span>
+<span class="w-7 h-7 rounded-lg bg-sky-50 flex items-center justify-center text-sky-600">
+<span class="material-symbols-outlined text-[16px]">speed</span>
+</span>
+</div>
+<div class="my-4 flex items-baseline gap-2">
+<div class="text-4xl font-extrabold font-mono text-ink-primary tracking-tight group-hover:text-brand-blue transition-colors">100K+</div>
+<span class="text-xs font-mono text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">PEAK TPS</span>
+</div>
+</div>
+<div>
+<!-- Mini SVG Sparkline -->
+<div class="w-full h-8 mb-3 overflow-hidden opacity-70 group-hover:opacity-100 transition-opacity">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0 18 Q 20 22, 35 12 T 65 8 T 85 4 L 100 2" fill="none" stroke="#0284C7" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 18 Q 20 22, 35 12 T 65 8 T 85 4 L 100 2 L 100 24 L 0 24 Z" fill="rgba(2, 132, 199, 0.08)"></path>
+</svg>
+</div>
+<div class="font-mono text-xs text-ink-secondary leading-relaxed">
+            Peak active users serviced simultaneously across resilient distributed backend instances with zero state loss.
+          </div>
+</div>
+</div>
+<!-- Bento Item 2: Lead Scope (HERO BENTO - 4 cols, Gradient Accent) -->
+<div class="lg:col-span-4 bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 text-white rounded-2xl p-6 shadow-bento hover:shadow-bento-hover transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 bg-white/10 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
+<div class="relative z-10">
+<div class="flex items-center justify-between">
+<span class="font-mono text-[11px] text-sky-100 uppercase font-bold tracking-wider">LEAD SCOPE &amp; GOVERNANCE</span>
+<span class="px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-mono text-[10px] font-bold">ACTIVE LEAD</span>
+</div>
+<div class="my-4 flex items-baseline gap-2">
+<div class="text-5xl font-extrabold font-mono tracking-tight text-white">9</div>
+<span class="text-sm font-mono text-sky-100 font-semibold">Engineers in Pod</span>
+</div>
+</div>
+<div class="relative z-10 pt-2 border-t border-white/15">
+<div class="font-mono text-xs text-sky-100 leading-relaxed">
+            Engineers actively led, technically mentored, architecture-governed &amp; reviewed across core passenger and AI infrastructure pods.
+          </div>
+<div class="mt-3 flex items-center gap-2 text-[11px] font-mono text-sky-200">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>RFC &amp; Production CI/CD Gate Owner</span>
+</div>
+</div>
+</div>
+<!-- Bento Item 3: Cost Efficiency (4 cols) -->
+<div class="lg:col-span-4 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 shadow-bento hover:shadow-bento-hover hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-semibold">INFRA COST EFFICIENCY</span>
+<span class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+</span>
+</div>
+<div class="my-4 flex items-baseline gap-2">
+<div class="text-4xl font-extrabold font-mono text-emerald-600 tracking-tight">~25-40%</div>
+<span class="text-xs font-mono text-slate-500 font-medium">REDUCTION</span>
+</div>
+</div>
+<div>
+<div class="w-full h-8 mb-3 overflow-hidden opacity-70 group-hover:opacity-100 transition-opacity">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 24">
+<path d="M0 4 Q 25 6, 45 14 T 75 18 T 100 22" fill="none" stroke="#0D9488" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 4 Q 25 6, 45 14 T 75 18 T 100 22 L 100 24 L 0 24 Z" fill="rgba(13, 148, 136, 0.08)"></path>
+</svg>
+</div>
+<div class="font-mono text-xs text-ink-secondary leading-relaxed">
+            Direct infrastructure spend reduction achieved via async queues, Redis sharding &amp; aggressive query optimization.
+          </div>
+</div>
+</div>
+<!-- Bento Item 4: Pipeline Volume (6 cols) -->
+<div class="lg:col-span-6 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 shadow-bento hover:shadow-bento-hover hover:border-sky-300 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-semibold">AI PIPELINE VOLUME</span>
+<span class="w-2 h-2 rounded-full bg-sky-500"></span>
+</div>
+<div class="text-3xl sm:text-4xl font-extrabold font-mono text-ink-primary tracking-tight">200K+</div>
+<div class="font-mono text-xs text-ink-secondary leading-relaxed pt-1">
+            Enterprise operational airline manuals &amp; technical plans parsed, chunked and verified via LLM workflows.
+          </div>
+</div>
+<div class="sm:border-l sm:border-slate-100 sm:pl-6 space-y-1 font-mono text-xs shrink-0 text-slate-500">
+<div><span class="text-ink-primary font-bold">94%</span> Recall Accuracy</div>
+<div><span class="text-ink-primary font-bold">680ms</span> Mean RAG Latency</div>
+<div class="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded mt-1 border border-emerald-200">BM25 + Dense Hybrid</div>
+</div>
+</div>
+<!-- Bento Item 5: Data Throughput & Latency (6 cols) -->
+<div class="lg:col-span-6 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 shadow-bento hover:shadow-bento-hover hover:border-indigo-300 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-semibold">REAL-TIME DATA THROUGHPUT</span>
+<span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+</div>
+<div class="text-3xl sm:text-4xl font-extrabold font-mono text-ink-primary tracking-tight">1M+</div>
+<div class="font-mono text-xs text-ink-secondary leading-relaxed pt-1">
+            Streaming telemetry events and inventory updates processed daily via Apache Kafka &amp; decoupled workers.
+          </div>
+</div>
+<div class="sm:border-l sm:border-slate-100 sm:pl-6 space-y-1 font-mono text-xs shrink-0 text-slate-500">
+<div><span class="text-ink-primary font-bold">p99 &lt; 140ms</span> (Down from 420ms)</div>
+<div><span class="text-ink-primary font-bold">10K ops/sec</span> Flash Sale Peak</div>
+<div class="text-indigo-700 font-semibold bg-indigo-50 px-2 py-0.5 rounded mt-1 border border-indigo-200">Zero Critical Outage</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 03. ARCHITECTURAL SUMMARY & LEADERSHIP SPOTLIGHT                          -->
+<!-- ========================================================================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+<!-- Left: Narrative -->
+<div class="lg:col-span-7 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-7 sm:p-9 shadow-bento space-y-6 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+<span class="font-mono text-xs font-semibold text-brand-blue uppercase tracking-wider">[01_PERSPECTIVE]</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary">
+              Distributed Backbone to Autonomous Agent Execution
+            </h2>
+</div>
+<div class="space-y-4 text-base text-ink-secondary leading-relaxed">
+<p>
+              My engineering trajectory started deep in the core plumbing of the web: high-concurrency microservices, event-driven topologies with Kafka and RabbitMQ, zero-downtime database migrations, and sub-millisecond cache designs. Over six years, that foundation solidified an intuition for where distributed systems bottleneck under peak load.
+            </p>
+<p>
+              Today, I channel that rigor into <span class="text-ink-primary font-bold bg-sky-50 px-1.5 py-0.5 rounded border border-sky-100">Applied Agentic AI systems</span>. Rather than treating LLMs as novelty endpoints, I treat them as non-deterministic compute blocks that require strict telemetry, guardrails, asynchronous worker pools, and low-latency semantic caching. The objective is constant: turning non-deterministic probabilistic models into battle-tested enterprise utilities.
+            </p>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2.5 font-mono text-xs">
+<div class="flex items-center gap-1.5 px-3 py-1 bg-slate-50 rounded-lg border border-slate-200 text-slate-700">
+<span class="w-2 h-2 rounded-full bg-sky-500"></span>
+<span>PATTERNS: EVENT-DRIVEN</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-slate-50 rounded-lg border border-slate-200 text-slate-700">
+<span class="w-2 h-2 rounded-full bg-indigo-600"></span>
+<span>PARADIGM: AGENTIC MULTI-NODE</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 rounded-lg border border-emerald-200 text-emerald-800 font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>SLO: 99.98% UPTIME</span>
+</div>
+</div>
+</div>
+<!-- Right: High-Craft Leadership Card -->
+<div class="lg:col-span-5 bg-gradient-to-b from-slate-900 to-slate-950 text-white rounded-3xl p-7 sm:p-8 shadow-bento flex flex-col justify-between relative overflow-hidden border border-slate-800">
+<!-- Accent decorative ring -->
+<div class="absolute -top-16 -right-16 w-56 h-56 rounded-full border border-sky-500/20 pointer-events-none"></div>
+<div class="space-y-5 relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 font-mono text-xs font-semibold text-sky-400 uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>ENGINEERING GOVERNANCE</span>
+</div>
+<span class="bg-sky-500/20 text-sky-300 border border-sky-400/30 font-mono text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+              ACTIVE LEAD ROLE
+            </span>
+</div>
+<h3 class="text-2xl font-bold text-white tracking-tight">
+            Cross-Functional Team &amp; System Governance
+          </h3>
+<p class="text-sm text-slate-300 leading-relaxed">
+            Led cross-functional team of ~9 engineers across product delivery, system reliability, code reviews, and junior engineer technical mentorship. Established standardized RFC processes, strict CI/CD linting gates, and automated synthetic load testing suites.
+          </p>
+<div class="space-y-2.5 font-mono text-xs text-slate-300 pt-3 border-t border-slate-800">
+<div class="flex items-start gap-2.5">
+<span class="text-sky-400 font-bold">&gt;</span>
+<span>Direct mentorship &amp; performance reviews for 9 engineers</span>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="text-sky-400 font-bold">&gt;</span>
+<span>System reliability &amp; incident response protocol architect</span>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="text-sky-400 font-bold">&gt;</span>
+<span>Cross-team alignment with Product, SecOps &amp; Infrastructure</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-slate-400 font-mono text-xs relative z-10">
+<span class="text-slate-500">SCOPE ID: AIR-IN-POD-09</span>
+<span class="text-sky-400 font-semibold">2023 — PRESENT</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 04. INTERACTIVE VERTICAL CAREER TIMELINE                                  -->
+<!-- ========================================================================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="experience">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 pb-4 border-b border-slate-200/80 gap-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2 font-mono text-xs font-semibold text-brand-blue uppercase">
+<span class="material-symbols-outlined text-[15px]">work_history</span>
+<span>[02_CAREER_TRACK]</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary font-sans">
+          Engineering &amp; Systems Timeline
+        </h2>
+</div>
+<div class="font-mono text-xs text-slate-500 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs">
+        TRACE: 2019.08 → PRESENT_TIMESTAMP
+      </div>
+</div>
+<!-- Timeline Wrapper -->
+<div class="relative pl-6 sm:pl-10 space-y-8">
+<!-- Continuous Glowing Rail -->
+<div class="absolute left-2.5 sm:left-4 top-4 bottom-4 w-0.5 bg-gradient-to-b from-sky-500 via-indigo-400 to-slate-300"></div>
+<!-- Node 1: Air India (Active Lead) -->
+<div class="relative group">
+<!-- Glowing Pulse Anchor Dot -->
+<div class="absolute -left-6 sm:-left-10 top-5 w-5 h-5 rounded-full bg-white border-4 border-sky-500 shadow-md ring-4 ring-sky-100 group-hover:scale-125 transition-transform duration-200"></div>
+<div class="bg-white/95 backdrop-blur-md border-2 border-sky-400/80 rounded-2xl p-6 sm:p-8 shadow-bento hover:shadow-bento-hover transition-all duration-300">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+<div class="flex items-center gap-3 flex-wrap">
+<span class="text-2xl font-bold text-ink-primary">Air India</span>
+<span class="px-2.5 py-0.5 bg-sky-50 text-sky-700 font-mono text-[11px] font-bold uppercase border border-sky-200 rounded-full flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse"></span>
+                CURRENT_STATION
+              </span>
+</div>
+<div class="font-mono text-xs text-slate-500 font-medium">
+              OCT 2023 — PRESENT • GURGAON, INDIA
+            </div>
+</div>
+<div class="mt-4 flex items-baseline justify-between flex-wrap gap-2">
+<div class="font-mono text-sm sm:text-base text-brand-blue font-bold">
+              Lead Software Engineer (Engineering Pod Lead)
+            </div>
+<div class="font-mono text-xs text-slate-500 font-medium bg-slate-100 px-2.5 py-1 rounded-md">
+              SCOPE: 9 DIRECT REPORTS • CORE BACKEND &amp; AI
+            </div>
+</div>
+<div class="mt-4 space-y-3 text-sm text-ink-secondary">
+<p class="text-ink-primary font-medium">
+              Spearheading enterprise microservices transition and introducing intelligent automation layers for high-throughput passenger and operational telemetry:
+            </p>
+<ul class="space-y-2.5 pl-1">
+<li class="flex items-start gap-2.5">
+<span class="text-sky-600 font-mono text-xs mt-0.5 font-bold">&gt;</span>
+<span>Direct architectural ownership of a 9-engineer pod delivering core high-concurrency microservices deployed across AWS ECS/EKS clusters.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-sky-600 font-mono text-xs mt-0.5 font-bold">&gt;</span>
+<span>Architected high-load transaction services handling millions of event updates, achieving 99.98% platform reliability and zero critical outage regressions.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-sky-600 font-mono text-xs mt-0.5 font-bold">&gt;</span>
+<span>Introduced internal LLM evaluation frameworks and semantic retrieval pipelines to automate operational document classification, saving ~120 engineer-hours monthly.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-sky-600 font-mono text-xs mt-0.5 font-bold">&gt;</span>
+<span>Optimized database read-write topologies with Redis cluster sharding, decreasing p99 request latency from 420ms to under 140ms under simulated peak load.</span>
+</li>
+</ul>
+</div>
+<!-- Tech Specs Pill Badges -->
+<div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs text-slate-400 uppercase mr-1">TECH_SPECS:</span>
+<span class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs rounded-lg transition-colors">Node.js</span>
+<span class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs rounded-lg transition-colors">FastAPI / Python</span>
+<span class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs rounded-lg transition-colors">AWS ECS</span>
+<span class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs rounded-lg transition-colors">Redis Cluster</span>
+<span class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs rounded-lg transition-colors">Kafka</span>
+<span class="px-2.5 py-1 bg-sky-50 text-sky-700 border border-sky-200 font-mono text-xs font-semibold rounded-lg">LLM Orchestration</span>
+</div>
+</div>
+</div>
+<!-- Node 2: Unicommerce -->
+<div class="relative group">
+<div class="absolute -left-6 sm:-left-10 top-5 w-5 h-5 rounded-full bg-white border-4 border-slate-300 shadow-sm group-hover:border-indigo-400 transition-colors"></div>
+<div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-bento hover:shadow-bento-hover hover:border-slate-300 transition-all duration-300">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+<div class="flex items-center gap-3">
+<span class="text-2xl font-bold text-ink-primary">Unicommerce</span>
+<span class="font-mono text-xs text-slate-500 uppercase bg-slate-100 px-2 py-0.5 rounded">E-COMMERCE INFRASTRUCTURE</span>
+</div>
+<div class="font-mono text-xs text-slate-500">
+              2022 — 2023 • NEW DELHI, INDIA
+            </div>
+</div>
+<div class="mt-4 font-mono text-sm sm:text-base text-ink-primary font-bold">
+            Senior Software Engineer
+          </div>
+<div class="mt-3 space-y-2.5 text-sm text-ink-secondary">
+<p>
+              Scaled e-commerce supply chain automation platforms processing millions of daily SKU sync cycles and high-TPS multi-tenant inventory allocations:
+            </p>
+<ul class="space-y-2 pl-1">
+<li class="flex items-start gap-2.5">
+<span class="text-slate-400 font-mono text-xs mt-0.5">&gt;</span>
+<span>Redesigned distributed inventory tracking engine using asynchronous worker queues, supporting 10,000+ operations/sec during peak festive flash sales.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-slate-400 font-mono text-xs mt-0.5">&gt;</span>
+<span>Reduced third-party API synchronization timeouts by 34% by instituting idempotent circuit breaker patterns and intelligent retry backoffs.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-slate-400 font-mono text-xs mt-0.5">&gt;</span>
+<span>Spearheaded database query profiling and partitioned indexes across PostgreSQL and MongoDB clusters, lowering database CPU saturation by 28%.</span>
+</li>
+</ul>
+</div>
+<div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Java / Spring Boot</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Node.js</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">PostgreSQL</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">RabbitMQ</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Microservices</span>
+</div>
+</div>
+</div>
+<!-- Node 3: Edfora (FIITJEE) -->
+<div class="relative group">
+<div class="absolute -left-6 sm:-left-10 top-5 w-5 h-5 rounded-full bg-white border-4 border-slate-300 shadow-sm group-hover:border-indigo-400 transition-colors"></div>
+<div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-bento hover:shadow-bento-hover hover:border-slate-300 transition-all duration-300">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+<div class="flex items-center gap-3">
+<span class="text-2xl font-bold text-ink-primary">Edfora (FIITJEE)</span>
+<span class="font-mono text-xs text-slate-500 uppercase bg-slate-100 px-2 py-0.5 rounded">EDTECH COMPUTATION ENGINE</span>
+</div>
+<div class="font-mono text-xs text-slate-500">
+              2020 — 2022 • NEW DELHI, INDIA
+            </div>
+</div>
+<div class="mt-4 font-mono text-sm sm:text-base text-ink-primary font-bold">
+            Software Engineer
+          </div>
+<div class="mt-3 space-y-2 text-sm text-ink-secondary">
+<ul class="space-y-2 pl-1">
+<li class="flex items-start gap-2.5">
+<span class="text-slate-400 font-mono text-xs mt-0.5">&gt;</span>
+<span>Developed real-time adaptive examination testing engine supporting 50,000+ simultaneous test takers with strict zero-loss state persistence.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-slate-400 font-mono text-xs mt-0.5">&gt;</span>
+<span>Migrated legacy monolithic application components into decoupled Node.js and Go microservices, improving deployment frequency by 3x.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-slate-400 font-mono text-xs mt-0.5">&gt;</span>
+<span>Integrated real-time analytics aggregation pipelines feeding student performance metrics dashboards using Elasticsearch and Redis.</span>
+</li>
+</ul>
+</div>
+<div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Go</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Node.js / Express</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">MongoDB</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Docker</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Elasticsearch</span>
+</div>
+</div>
+</div>
+<!-- Node 4: Wingify -->
+<div class="relative group">
+<div class="absolute -left-6 sm:-left-10 top-5 w-5 h-5 rounded-full bg-white border-4 border-slate-300 shadow-sm group-hover:border-indigo-400 transition-colors"></div>
+<div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-bento hover:shadow-bento-hover hover:border-slate-300 transition-all duration-300">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+<div class="flex items-center gap-3">
+<span class="text-2xl font-bold text-ink-primary">Wingify (VWO)</span>
+<span class="font-mono text-xs text-slate-500 uppercase bg-slate-100 px-2 py-0.5 rounded">EXPERIMENTATION PLATFORM</span>
+</div>
+<div class="font-mono text-xs text-slate-500">
+              2019 — 2020 • NEW DELHI, INDIA
+            </div>
+</div>
+<div class="mt-4 font-mono text-sm sm:text-base text-ink-primary font-bold">
+            Software Engineering Intern
+          </div>
+<div class="mt-3 space-y-2 text-sm text-ink-secondary">
+<ul class="space-y-2 pl-1">
+<li class="flex items-start gap-2.5">
+<span class="text-slate-400 font-mono text-xs mt-0.5">&gt;</span>
+<span>Engineered telemetry and analytics data ingestion modules for the VWO core A/B testing JavaScript SDK running on high-traffic publisher domains.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="text-slate-400 font-mono text-xs mt-0.5">&gt;</span>
+<span>Formulated unit and synthetic load regression suites to guarantee client-side script payloads remained strictly below 25KB minified.</span>
+</li>
+</ul>
+</div>
+<div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">JavaScript (ES6+)</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Performance Profiling</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 font-mono text-xs rounded-lg">Distributed Telemetry</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 05. AI/LLM ARCHITECTURAL BLUEPRINTS & FLOW VISUALIZER (SHOWSTOPPER)       -->
+<!-- ========================================================================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="systems-ai">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-slate-200/80 gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 font-mono text-xs font-semibold text-brand-blue uppercase">
+<span class="material-symbols-outlined text-[16px]">account_tree</span>
+<span>[03_SYSTEMS_AND_AGENTIC_AI]</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary font-sans">
+          Applied AI Architectural Blueprints
+        </h2>
+</div>
+<div class="font-mono text-xs text-slate-500 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs">
+        SCHEMATICS: 3 PRODUCTION RUNTIMES
+      </div>
+</div>
+<div class="space-y-8">
+<!-- CASE STUDY 01: Agentic Profile Matching Engine -->
+<div class="bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl p-6 sm:p-9 shadow-bento space-y-6 relative overflow-hidden group">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-slate-100 pb-5">
+<div>
+<div class="flex items-center gap-2 font-mono text-xs font-bold text-sky-600 uppercase tracking-wider">
+<span>PROJECT_01</span>
+<span class="text-slate-300">//</span>
+<span>AGENTIC WORKFLOW</span>
+</div>
+<h3 class="text-xl sm:text-2xl font-bold text-ink-primary mt-1">
+              Agentic Profile Matching &amp; Semantic Candidate Evaluation Engine
+            </h3>
+</div>
+<div class="flex items-center gap-2 font-mono text-xs bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 text-emerald-800 shadow-xs shrink-0 font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>PROD_BENCHMARK: SUB-250MS LATENCY</span>
+</div>
+</div>
+<!-- HIGH-CRAFT FLOW SCHEMATIC DIAGRAM -->
+<div class="bg-slate-900 rounded-2xl p-6 text-white shadow-inner relative overflow-x-auto border border-slate-800">
+<div class="flex items-center justify-between font-mono text-[11px] text-slate-400 mb-4 pb-2 border-b border-slate-800">
+<span class="uppercase tracking-wider font-semibold text-sky-400">TOPOLOGY: ASYNCHRONOUS AGENTIC EVALUATION PIPELINE</span>
+<span class="hidden sm:inline">LANGGRAPH • PGVECTOR • PROMPT EVALUATOR</span>
+</div>
+<div class="min-w-[760px] flex items-center justify-between gap-2 py-3 font-mono">
+<!-- Stage 1 -->
+<div class="bg-slate-800/90 border border-slate-700/80 rounded-xl p-4 flex-1 text-center shadow-lg relative group/node hover:border-sky-400 transition-colors">
+<div class="text-[10px] text-slate-400 uppercase font-semibold">STAGE 01</div>
+<div class="text-white font-bold text-xs mt-1">[Candidate Input]</div>
+<div class="text-slate-400 text-[11px] mt-0.5">Resume / Spec JSON</div>
+<div class="mt-2 inline-block text-[9px] bg-slate-700 px-2 py-0.5 rounded text-slate-300">Schema Verified</div>
+</div>
+<!-- Flow Arrow 1 -->
+<div class="flex flex-col items-center px-1 text-sky-400">
+<span class="text-xs">▶</span>
+<span class="text-[9px] text-slate-500">async</span>
+</div>
+<!-- Stage 2 -->
+<div class="bg-slate-800/90 border border-slate-700/80 rounded-xl p-4 flex-1 text-center shadow-lg relative group/node hover:border-sky-400 transition-colors">
+<div class="text-[10px] text-sky-400 uppercase font-semibold">STAGE 02</div>
+<div class="text-white font-bold text-xs mt-1">[Embedding Node]</div>
+<div class="text-slate-400 text-[11px] mt-0.5">text-embedding-3-large</div>
+<div class="mt-2 inline-block text-[9px] bg-sky-900/60 text-sky-300 border border-sky-700/60 px-2 py-0.5 rounded">1536 Dimensions</div>
+</div>
+<!-- Flow Arrow 2 -->
+<div class="flex flex-col items-center px-1 text-sky-400">
+<span class="text-xs">▶</span>
+<span class="text-[9px] text-slate-500">dense</span>
+</div>
+<!-- Stage 3 -->
+<div class="bg-slate-800/90 border border-slate-700/80 rounded-xl p-4 flex-1 text-center shadow-lg relative group/node hover:border-sky-400 transition-colors">
+<div class="text-[10px] text-slate-400 uppercase font-semibold">STAGE 03</div>
+<div class="text-white font-bold text-xs mt-1">[Vector / pgvector]</div>
+<div class="text-slate-400 text-[11px] mt-0.5">HNSW Index Filter</div>
+<div class="mt-2 inline-block text-[9px] bg-slate-700 px-2 py-0.5 rounded text-slate-300">Top-50 Nearest</div>
+</div>
+<!-- Flow Arrow 3 -->
+<div class="flex flex-col items-center px-1 text-sky-400">
+<span class="text-xs">▶</span>
+<span class="text-[9px] text-slate-500">eval</span>
+</div>
+<!-- Stage 4: LLM AGENT (Glow Hero Node) -->
+<div class="bg-gradient-to-b from-sky-900/80 to-blue-950 border-2 border-sky-400 rounded-xl p-4 flex-1 text-center shadow-xl shadow-sky-500/20 relative scale-105">
+<div class="text-[10px] text-sky-300 uppercase font-bold flex items-center justify-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+                STAGE 04 :: LLM AGENT
+              </div>
+<div class="text-white font-extrabold text-xs mt-1">[Agentic Evaluator]</div>
+<div class="text-sky-200 text-[11px] mt-0.5 font-medium">Prompt Re-ranking Chain</div>
+<div class="mt-2 inline-block text-[9px] bg-sky-500 text-white font-bold px-2 py-0.5 rounded shadow-sm">Deterministic Graph</div>
+</div>
+<!-- Flow Arrow 4 -->
+<div class="flex flex-col items-center px-1 text-teal-400">
+<span class="text-xs">▶</span>
+<span class="text-[9px] text-slate-500">score</span>
+</div>
+<!-- Stage 5 -->
+<div class="bg-slate-800/90 border border-teal-500/70 rounded-xl p-4 flex-1 text-center shadow-lg relative group/node">
+<div class="text-[10px] text-teal-400 uppercase font-semibold">STAGE 05</div>
+<div class="text-teal-300 font-bold text-xs mt-1">[Scored Matrix]</div>
+<div class="text-slate-400 text-[11px] mt-0.5">JSON Confidence Matrix</div>
+<div class="mt-2 inline-block text-[9px] bg-teal-950 text-teal-300 border border-teal-700 px-2 py-0.5 rounded font-bold">score: 0.88 - 0.98</div>
+</div>
+</div>
+</div>
+<!-- 4-Box Technical Deconstruction Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-5 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-bold tracking-wider">01 // THE PROBLEM</span>
+<p class="text-xs text-ink-secondary leading-relaxed">
+              Legacy keyword search yielded high false positives and missed qualified candidates with non-standard taxonomy phrasing.
+            </p>
+</div>
+<div class="p-5 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-bold tracking-wider">02 // THE ARCHITECTURE</span>
+<p class="text-xs text-ink-secondary leading-relaxed">
+              Two-tiered retrieval: Approximate nearest-neighbor vector filter narrows pool to top 50; multi-attribute LLM evaluator then scores nuanced skill alignment.
+            </p>
+</div>
+<div class="p-5 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-bold tracking-wider">03 // STACK REGISTRY</span>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">LangChain</span>
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">OpenAI API</span>
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">FastAPI</span>
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">pgvector</span>
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">Redis</span>
+</div>
+</div>
+<div class="p-5 bg-gradient-to-br from-sky-50 to-indigo-50/50 border border-sky-200 rounded-2xl space-y-2">
+<span class="font-mono text-[11px] text-sky-800 uppercase font-bold tracking-wider">04 // OUTCOME METRIC</span>
+<div class="font-mono text-xl text-brand-blue font-extrabold">
+              +38% PRECISION
+            </div>
+<p class="text-xs text-sky-950 leading-relaxed font-medium">
+              38% verified precision improvement over lexical search with sub-250ms end-to-end caching.
+            </p>
+</div>
+</div>
+</div>
+<!-- CASE STUDY 02: Enterprise RAG-Based Knowledge Pipeline -->
+<div class="bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl p-6 sm:p-9 shadow-bento space-y-6 relative overflow-hidden group">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-slate-100 pb-5">
+<div>
+<div class="flex items-center gap-2 font-mono text-xs font-bold text-sky-600 uppercase tracking-wider">
+<span>PROJECT_02</span>
+<span class="text-slate-300">//</span>
+<span>KNOWLEDGE PLATFORM</span>
+</div>
+<h3 class="text-xl sm:text-2xl font-bold text-ink-primary mt-1">
+              Enterprise RAG-Based Operational Knowledge Pipeline
+            </h3>
+</div>
+<div class="flex items-center gap-2 font-mono text-xs bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 text-emerald-800 shadow-xs shrink-0 font-semibold">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>DATA SCALE: 200K+ RECORDS // 94% RETRIEVAL ACCURACY</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-5 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-bold tracking-wider">01 // THE PROBLEM</span>
+<p class="text-xs text-ink-secondary leading-relaxed">
+              High hallucination rates and unacceptable 4.8s latency when querying 200,000+ unstructured multi-format operational airline technical manuals.
+            </p>
+</div>
+<div class="p-5 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-bold tracking-wider">02 // HYBRID APPROACH</span>
+<p class="text-xs text-ink-secondary leading-relaxed">
+              Hybrid sparse (BM25) + dense vector search paired with contextual sliding-window chunking and cross-encoder reranking before LLM context ingestion.
+            </p>
+</div>
+<div class="p-5 bg-slate-50 border border-slate-200/80 rounded-2xl space-y-2">
+<span class="font-mono text-[11px] text-slate-500 uppercase font-bold tracking-wider">03 // STACK REGISTRY</span>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">LlamaIndex</span>
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">Pinecone</span>
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">Claude 3.5 Sonnet</span>
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">Docker</span>
+<span class="px-2 py-0.5 bg-white border border-slate-200 text-slate-700 font-mono text-[11px] rounded-md font-medium">Python</span>
+</div>
+</div>
+<div class="p-5 bg-gradient-to-br from-emerald-50 to-teal-50/50 border border-emerald-200 rounded-2xl space-y-2">
+<span class="font-mono text-[11px] text-emerald-800 uppercase font-bold tracking-wider">04 // OUTCOME METRIC</span>
+<div class="font-mono text-xl text-emerald-700 font-extrabold">
+              94% ACCURACY
+            </div>
+<p class="text-xs text-emerald-950 leading-relaxed font-medium">
+              Hallucinations cut down by ~82%; mean response time dropped to 680ms with 94% verifiable factual recall.
+            </p>
+</div>
+</div>
+</div>
+<!-- CASE STUDY 03: Intelligent Resume Analyser -->
+<div class="bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-bento space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+<div>
+<div class="flex items-center gap-2 font-mono text-xs font-bold text-sky-600 uppercase tracking-wider">
+<span>PROJECT_03</span>
+<span class="text-slate-300">//</span>
+<span>PARSER &amp; SYNTHESIS</span>
+</div>
+<h3 class="text-xl font-bold text-ink-primary mt-1">
+              Intelligent Resume &amp; Dossier Telemetry Analyser
+            </h3>
+</div>
+<span class="font-mono text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-semibold border border-slate-200 shrink-0">
+            JSON_SCHEMA_VALIDATOR
+          </span>
+</div>
+<p class="text-sm text-ink-secondary max-w-4xl leading-relaxed">
+          High-throughput PDF and doc parser utilizing OCR pipelines and deterministic constrained decoding (Instructor / Outlines) to extract structured JSON profile data directly into an event stream. Eliminates non-conforming tokens at generation time.
+        </p>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 font-mono text-xs">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg border border-slate-200">Python</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg border border-slate-200">Instructor</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg border border-slate-200">Pydantic</span>
+<span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-lg border border-slate-200">Celery / Redis</span>
+</div>
+<div class="text-emerald-800 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>VALIDATION FAILURE RATE: &lt; 0.02%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 06. MODERN ARSENAL / TECH STACK MATRIX                                    -->
+<!-- ========================================================================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14" id="skills">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between pb-4 mb-8 border-b border-slate-200/80 gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 font-mono text-xs font-semibold text-brand-blue uppercase">
+<span class="material-symbols-outlined text-[16px]">layers</span>
+<span>[04_STACK_INDEX]</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary font-sans">
+          Technical Stack &amp; Architectural Arsenal
+        </h2>
+</div>
+<div class="font-mono text-xs text-slate-500 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs">
+        TOTAL COMPONENT MODULES: 48
+      </div>
+</div>
+<!-- 6-Block Modern Bento Stack Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- Category 1: Languages -->
+<div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 space-y-4 shadow-bento hover:border-slate-300 transition-all">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2.5 font-mono text-xs font-bold text-sky-700">
+<span>[ LANG: PRIMARY_SYNTAX ]</span>
+<span class="text-slate-400 bg-slate-100 px-2 py-0.5 rounded">06</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">TypeScript</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">JavaScript (ESNext)</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Python</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Go</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">SQL</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">HTML5 / CSS3</span>
+</div>
+</div>
+<!-- Category 2: Backend Architecture -->
+<div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 space-y-4 shadow-bento hover:border-slate-300 transition-all">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2.5 font-mono text-xs font-bold text-sky-700">
+<span>[ BACKEND: RUNTIMES &amp; PROTOCOLS ]</span>
+<span class="text-slate-400 bg-slate-100 px-2 py-0.5 rounded">08</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Node.js</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Express</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">FastAPI</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">NestJS</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Microservices</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">RESTful APIs</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">GraphQL</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">gRPC</span>
+</div>
+</div>
+<!-- Category 3: Applied AI & LLM Systems (Highlighted Hero) -->
+<div class="bg-gradient-to-br from-sky-50/80 via-white to-indigo-50/40 border-2 border-sky-400 rounded-2xl p-6 space-y-4 shadow-bento relative">
+<div class="flex items-center justify-between border-b border-sky-200 pb-2.5 font-mono text-xs font-bold text-sky-900">
+<span>[ AI / LLM: AGENTIC &amp; RAG ]</span>
+<span class="text-sky-700 bg-sky-100 px-2.5 py-0.5 rounded-full border border-sky-300 font-bold">CORE FOCUS</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-white border border-sky-300 text-sky-950 rounded-lg font-mono text-xs font-semibold shadow-xs">LangChain</span>
+<span class="px-3 py-1 bg-white border border-sky-300 text-sky-950 rounded-lg font-mono text-xs font-semibold shadow-xs">LlamaIndex</span>
+<span class="px-3 py-1 bg-white border border-sky-300 text-sky-950 rounded-lg font-mono text-xs font-semibold shadow-xs">RAG Pipelines</span>
+<span class="px-3 py-1 bg-white border border-sky-200 text-slate-800 rounded-lg font-mono text-xs">OpenAI API</span>
+<span class="px-3 py-1 bg-white border border-sky-200 text-slate-800 rounded-lg font-mono text-xs">Vector DBs (Pinecone/pgvector)</span>
+<span class="px-3 py-1 bg-white border border-sky-300 text-sky-950 rounded-lg font-mono text-xs font-semibold shadow-xs">Agentic Workflows</span>
+<span class="px-3 py-1 bg-white border border-sky-200 text-slate-800 rounded-lg font-mono text-xs">Prompt Engineering</span>
+</div>
+</div>
+<!-- Category 4: Databases & Storage -->
+<div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 space-y-4 shadow-bento hover:border-slate-300 transition-all">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2.5 font-mono text-xs font-bold text-sky-700">
+<span>[ STORAGE: PERSISTENCE &amp; CACHE ]</span>
+<span class="text-slate-400 bg-slate-100 px-2 py-0.5 rounded">05</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">PostgreSQL</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">MongoDB</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Redis</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Elasticsearch</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">DynamoDB</span>
+</div>
+</div>
+<!-- Category 5: Cloud, Infra & Event Streams -->
+<div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 space-y-4 shadow-bento hover:border-slate-300 transition-all">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2.5 font-mono text-xs font-bold text-sky-700">
+<span>[ CLOUD &amp; DEVOPS: TOPOLOGY ]</span>
+<span class="text-slate-400 bg-slate-100 px-2 py-0.5 rounded">07</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">AWS (ECS, Lambda, S3, RDS)</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Docker</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Kubernetes</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">CI/CD Pipelines</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Apache Kafka</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">RabbitMQ</span>
+</div>
+</div>
+<!-- Category 6: Observability & Frontend -->
+<div class="bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl p-6 space-y-4 shadow-bento hover:border-slate-300 transition-all">
+<div class="flex items-center justify-between border-b border-slate-100 pb-2.5 font-mono text-xs font-bold text-sky-700">
+<span>[ OBSERVABILITY &amp; CLIENT ]</span>
+<span class="text-slate-400 bg-slate-100 px-2 py-0.5 rounded">08</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Prometheus</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Grafana</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Datadog</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Jest</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Locust</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">React</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Next.js</span>
+<span class="px-3 py-1 bg-slate-50 border border-slate-200/80 rounded-lg text-ink-secondary font-mono text-xs hover:border-sky-400 hover:text-ink-primary transition-all">Tailwind CSS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 07. NOW / ACTIVE EXPLORATIONS & ACADEMIC CREDENTIAL                       -->
+<!-- ========================================================================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- NOW Card -->
+<div class="p-7 sm:p-8 bg-gradient-to-b from-sky-50/50 via-white to-white border border-slate-200/80 rounded-3xl space-y-4 shadow-bento relative overflow-hidden">
+<div class="flex items-center justify-between border-b border-slate-100 pb-3">
+<span class="font-mono text-xs font-bold text-sky-700 uppercase">// ACTIVE_RADAR: NOW</span>
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-500"></span>
+</span>
+</div>
+<h3 class="text-xl sm:text-2xl font-bold text-ink-primary tracking-tight">
+          What I'm Exploring &amp; Prototyping
+        </h3>
+<p class="text-sm text-ink-secondary leading-relaxed">
+          Exploring multi-agent consensus protocols, local SLM inference optimization (quantized Ollama/vLLM rigs), and deterministic tool-use evaluation for autonomous task execution.
+        </p>
+<div class="pt-2 font-mono text-xs text-slate-500 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-600"></span>
+<span>STATUS: EXPERIMENTAL RUNTIME // LAB_BRANCH</span>
+</div>
+</div>
+<!-- EDUCATION Card -->
+<div class="p-7 sm:p-8 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-3xl space-y-4 shadow-bento relative overflow-hidden">
+<div class="flex items-center justify-between border-b border-slate-100 pb-3">
+<span class="font-mono text-xs font-semibold text-slate-500 uppercase">// ACADEMIC_REGISTRY</span>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">school</span>
+</div>
+<div class="space-y-1">
+<div class="text-xl sm:text-2xl font-bold text-ink-primary tracking-tight">
+            Delhi Technological University (DTU)
+          </div>
+<div class="font-mono text-sm text-brand-blue font-semibold">
+            B.Tech in Information Technology
+          </div>
+</div>
+<p class="text-sm text-ink-secondary leading-relaxed">
+          Formerly Delhi College of Engineering (DCE). Rigorous foundational curriculum spanning Data Structures, Algorithms, Distributed OS, Compiler Design, and Database Systems.
+        </p>
+<div class="pt-2 font-mono text-xs text-slate-500 flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>SESSION: 2016 — 2020 • FIRST CLASS HONOURS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 08. CONTACT & SYSTEM TRANSMISSION PANEL                                   -->
+<!-- ========================================================================= -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="contact-module">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between pb-4 mb-8 border-b border-slate-200/80 gap-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 font-mono text-xs font-semibold text-brand-blue uppercase">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>[05_SYSTEM_TRANSMISSION]</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink-primary font-sans">
+          Initiate Contact / Technical Inquiry
+        </h2>
+</div>
+<div class="font-mono text-xs text-slate-500 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-xs">
+        PROTOCOL: SECURE_INGRESS
+      </div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: Modern Transmission Form -->
+<div class="lg:col-span-7 bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl p-7 sm:p-9 shadow-bento space-y-6">
+<div class="border-b border-slate-100 pb-3 flex items-center justify-between">
+<span class="font-mono text-xs font-bold text-slate-500 uppercase tracking-wider">TRANSMISSION_PAYLOAD</span>
+<span class="font-mono text-xs text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            INGRESS_READY
+          </span>
+</div>
+<form class="space-y-5" id="contact-form" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden');">
+<div class="space-y-2">
+<label class="block font-mono text-xs font-semibold text-slate-700 uppercase tracking-wide" for="caller-id">
+              01 // CALLER_NAME
+            </label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-ink-primary placeholder:text-slate-400 focus:border-brand-blue focus:bg-white focus:ring-2 focus:ring-brand-blue/20 focus:outline-none transition-all" id="caller-id" placeholder="e.g. Alex Vance" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-mono text-xs font-semibold text-slate-700 uppercase tracking-wide" for="caller-mail">
+              02 // SENDER_NETWORK_ADDRESS (EMAIL)
+            </label>
+<input class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-ink-primary placeholder:text-slate-400 focus:border-brand-blue focus:bg-white focus:ring-2 focus:ring-brand-blue/20 focus:outline-none transition-all" id="caller-mail" placeholder="alex@engineering-lead.com" required="" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block font-mono text-xs font-semibold text-slate-700 uppercase tracking-wide" for="payload-msg">
+              03 // INQUIRY_PAYLOAD (MESSAGE)
+            </label>
+<textarea class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-ink-primary placeholder:text-slate-400 focus:border-brand-blue focus:bg-white focus:ring-2 focus:ring-brand-blue/20 focus:outline-none transition-all" id="payload-msg" placeholder="Detail architectural challenge, role scope, or project parameters..." required="" rows="4"></textarea>
+</div>
+<button class="w-full py-3.5 bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 hover:opacity-95 text-white rounded-xl font-mono text-xs uppercase tracking-wider transition-all shadow-md shadow-sky-500/20 font-bold flex items-center justify-center gap-2 active:scale-[0.99]" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>[ TRANSMIT DISPATCH ]</span>
+</button>
+</form>
+<!-- Feedback alert -->
+<div class="hidden p-4 bg-emerald-50 border border-emerald-200 rounded-xl space-y-1 font-mono text-xs" id="form-feedback">
+<div class="flex items-center gap-2 text-emerald-800 font-bold">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>STATUS: 200 OK // DISPATCH_RECEIVED</span>
+</div>
+<div class="text-emerald-950 font-sans text-sm">
+            Payload queued successfully. Direct notification routed to Harshit Meena. Expected turnaround &lt; 24h.
+          </div>
+</div>
+</div>
+<!-- Right: Direct Credentials & Coordinates -->
+<div class="lg:col-span-5 space-y-4">
+<!-- Direct Email Pill Box with Copy Action -->
+<div class="bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl p-6 space-y-3 shadow-bento">
+<div class="flex items-center justify-between font-mono text-xs font-semibold text-slate-500 uppercase">
+<span>DIRECT_MAILTO</span>
+<span class="text-[11px] text-brand-blue bg-blue-50 px-2 py-0.5 rounded">PRIMARY INBOX</span>
+</div>
+<div class="p-3 bg-slate-50 rounded-2xl border border-slate-200 flex items-center justify-between gap-2">
+<a class="font-mono text-xs sm:text-sm text-brand-blue font-bold truncate hover:underline" href="mailto:harshitmeena.dev@gmail.com">
+              harshitmeena.dev@gmail.com
+            </a>
+<button class="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-colors shrink-0 shadow-xs" onclick="navigator.clipboard.writeText('harshitmeena.dev@gmail.com'); alert('Copied email to clipboard!');" title="Copy Email" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<div class="font-mono text-xs text-slate-500">
+            Direct inbox monitor for technical inquiries &amp; leadership roles.
+          </div>
+</div>
+<!-- Scrape Protected Phone -->
+<div class="bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl p-6 space-y-3 shadow-bento">
+<div class="flex items-center justify-between">
+<span class="font-mono text-xs font-semibold text-slate-500 uppercase">TELEPHONY_CIRCUIT</span>
+<span class="font-mono text-[10px] text-slate-400 bg-slate-100 px-2 py-0.5 rounded">SCRAPE_PROTECTED</span>
+</div>
+<div id="phone-container">
+<button class="w-full py-2.5 px-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-ink-secondary hover:text-ink-primary font-mono text-xs uppercase flex items-center justify-between transition-colors" onclick="document.getElementById('phone-container').innerHTML = '&lt;div class=\'font-mono text-xs text-ink-primary bg-emerald-50/50 p-3 rounded-xl border border-emerald-200 flex items-center justify-between\'&gt;&lt;span class=\'font-bold text-sm\'&gt;+91 98717 89658&lt;/span&gt;&lt;span class=\'text-emerald-800 font-bold bg-emerald-100 px-2.5 py-0.5 rounded text-[10px]\'&gt;VERIFIED&lt;/span&gt;&lt;/div&gt;';" type="button">
+<span>[ REVEAL SECURE PHONE ]</span>
+<span class="material-symbols-outlined text-[16px] text-slate-500">visibility</span>
+</button>
+</div>
+</div>
+<!-- Node Coordinates -->
+<div class="bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-3xl p-6 space-y-3 font-mono text-xs shadow-bento">
+<div class="font-bold text-slate-500 uppercase border-b border-slate-100 pb-2 flex items-center justify-between">
+<span>NODE_PROPERTIES</span>
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</div>
+<div class="space-y-2 text-ink-secondary">
+<div class="flex justify-between">
+<span>PRIMARY_BASE:</span>
+<span class="text-ink-primary font-semibold">New Delhi / Gurgaon, India</span>
+</div>
+<div class="flex justify-between">
+<span>REMOTE_COMPAT:</span>
+<span class="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.2 rounded">FULL / GLOBAL READY</span>
+</div>
+<div class="flex justify-between">
+<span>TIMEZONE:</span>
+<span class="text-ink-primary font-semibold">IST (UTC +05:30)</span>
+</div>
+<div class="flex justify-between">
+<span>NOTICE_INTERVAL:</span>
+<span class="text-ink-primary font-semibold">STANDARD / NEGOTIABLE</span>
+</div>
+</div>
+<div class="pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500">
+<a class="hover:text-brand-blue transition-colors flex items-center gap-1 font-bold" href="https://github.com" rel="noopener" target="_blank">
+<span>[ GITHUB ]</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<a class="hover:text-brand-blue transition-colors flex items-center gap-1 font-bold" href="https://linkedin.com" rel="noopener" target="_blank">
+<span>[ LINKEDIN ]</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ========================================================================= -->
+<!-- 09. AWARD-WINNING FOOTER & SYSTEM TELEMETRY                               -->
+<!-- ========================================================================= -->
+<footer class="w-full bg-white/95 backdrop-blur-xl border-t border-slate-200/80 py-12 relative z-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 border-b border-slate-100">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-lg bg-slate-900 text-white font-bold text-xs flex items-center justify-center">
+            HM
+          </div>
+<span class="text-base font-bold text-ink-primary">Harshit Meena</span>
+</div>
+<div class="font-mono text-xs text-slate-500 uppercase">DTU Alum // Lead Software Engineer</div>
+<div class="font-mono text-[11px] text-slate-400">DISTRIBUTED SYSTEMS • APPLIED AI</div>
+</div>
+<div class="space-y-2">
+<div class="font-mono text-xs font-bold text-slate-700 uppercase tracking-wider">Operational Node</div>
+<div class="flex items-center gap-1.5 font-mono text-xs text-ink-primary">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>India / Remote-Ready</span>
+</div>
+<div class="font-mono text-xs text-slate-500">Timezone: IST (UTC +05:30)</div>
+</div>
+<div class="space-y-2">
+<div class="font-mono text-xs font-bold text-slate-700 uppercase tracking-wider">External Registry</div>
+<div class="flex flex-col gap-1.5 font-mono text-xs">
+<a class="text-slate-600 hover:text-brand-blue transition-colors flex items-center justify-between" href="https://github.com" rel="noopener" target="_blank">
+<span>[ GITHUB_REPO ]</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-slate-600 hover:text-brand-blue transition-colors flex items-center justify-between" href="https://linkedin.com" rel="noopener" target="_blank">
+<span>[ LINKEDIN_NET ]</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-brand-blue hover:underline transition-colors flex items-center justify-between" href="mailto:harshitmeena.dev@gmail.com">
+<span>[ MAILTO: DIRECT ]</span>
+<span class="material-symbols-outlined text-[14px]">mail</span>
+</a>
+</div>
+</div>
+<div class="space-y-2">
+<div class="font-mono text-xs font-bold text-slate-700 uppercase tracking-wider">Telemetry Feed</div>
+<div class="space-y-1 font-mono text-xs">
+<div class="text-ink-primary flex items-center justify-between">
+<span class="text-slate-500">SYS_UPTIME:</span>
+<span class="text-emerald-700 font-bold">99.98%</span>
+</div>
+<div class="text-ink-primary flex items-center justify-between">
+<span class="text-slate-500">SYS_STATUS:</span>
+<span class="font-bold text-slate-800">200 OK</span>
+</div>
+<div class="text-slate-400 text-[11px] pt-1">BUILD: PROD-SHA-8F29A</div>
+</div>
+</div>
+</div>
+<div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs text-slate-500">
+<div>© 2025 HARSHIT MEENA. ALL RIGHTS RESERVED.</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+<span>PRECISION ARCHITECTURE // HIGH-THROUGHPUT RUNTIME</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

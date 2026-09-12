@@ -21,7 +21,7 @@ Design and content must satisfy the fast-scan reader AND the deep-dive reader at
 | UI components | [shadcn/ui](https://ui.shadcn.com) (copy-in components on Tailwind + Radix); theme tokens remapped to the Systems Engineer palette — not stock shadcn defaults |
 | Hosting | Vercel |
 | Content updates | Must be easy to add/remove/edit sections, projects, experience entries in the future without a rebuild of architecture — i.e. scalable/maintainable content model |
-| Design | Owner is confident about visual direction — this doc covers content/structure/technical scope; design options are provided separately below |
+| Design | Visual system: **Precision Slate & Electric Cyan** — see `docs/web-design/` (desktop) and `docs/responsive-design/` (mobile); summary in `docs/design-prompt.md` |
 
 ## 4. Core Principle: "Frontend-only" ≠ "No dynamic content"
 
